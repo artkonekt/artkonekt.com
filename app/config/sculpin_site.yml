@@ -4,6 +4,7 @@
 title: artkonekt.com
 subtitle: Ecommerce Development, Maintenance & Operations
 google_analytics_tracking_id: UA-41126137-3
+url: https://artkonekt.com
 # Insert your disqus shortname
-#disqus:
-#    shortname:
+disqus:
+    shortname: artkonekt
