@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="robots" content="index, follow">
+
+
+    <title>Framework Agnostic PHP Applications &middot; artkonekt.com &middot; Ecommerce Development, Maintenance &amp; Operations</title>
+    <script src="https://use.typekit.net/wch5yzx.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <link rel="stylesheet" href="/css/vendor/pure/pure-min.css">
+    <link rel="stylesheet" href="/css/vendor/pure/grids-responsive-min.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+                
+</head>
+<body>
+
+    <header class="header">
+
+    <nav class="header-logo">
+        <a href="/"><img src="/images/logox6.svg" id="logo"></a>
+        <h4 class="logo-title">artkonekt</h4>
+    </nav>
+
+    <div class="header-menu">
+        <nav class="menu menu-main">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/blog">Blog</a></li>
+            </ul>
+        </nav>
+    </div>
+
+
+</header>
+        <div class="wrapper">
+        <div class="content">
+
+            <article class="blogpost">
+
+                <header>
+                    <h1>Framework Agnostic PHP Applications</h1>
+                </header>
+
+                <div>
+                    <p>This post is a transcript of a discussion between me and <a href="https://www.sitepoint.com/author/bskvorc/">Bruno Skvorc</a> under a <a href="https://www.sitepoint.com/up-and-running-with-the-fastest-php-framework-on-php7-in-5-mins/">Sitepoint article about Phalcon</a>. This way I'd like to send Bruno a big thank you for the inspiring conversation! ;)</p>
+
+<p>I'm missing a concept from Phalcon similar to Laravel's Service Providers or Symfony Bundles. This probably would help others (even me) to start developing reusable extensions for phalcon that this cool framework unfortunately lacks yet.</p>
+
+<blockquote>
+  <p>Just develop plain old PHP packages for Composer/Packagist, no need for bundles and service providers - they're all just shortcuts for DI containers anyway, and needlessly couple your package to a framework. Make something that works everywhere, and instruct people on how to use it well with a DI container instead.</p>
+</blockquote>
+
+<p>That's the theory. Actually when you have to do something concrete, you choose right at the start at it's minimum an ORM, so it's immediately coupled to something more than just php. If you try to do it in a framework agnostic way, you end up in a serious design headache due to heavy abstractions.</p>
+
+<p>Do you use collections or just plain arrays? If collections which one? Illuminate or Doctrine collections? Why? Plain arrays? Good luck with filtering, shrinking and other nice tasks on the go.</p>
+
+<p>Which event/listener implementation will you use? All frameworks have their own. I was using a composer package with phalcon that relies on the very popular symfony events implementation. There's nothing that fits into phalcon's own event system.</p>
+
+<p>Will you use SQL or some NoSQL like Mongo? Will you use a Datamapper or some ActiveRecord ORM?</p>
+
+<p>When you answer all these questions you'll end up with a series of decisions that will tie you to other libraries/frameworks, at least for usual business applications.</p>
+
+<p>I am actively maintaining some projects on packagist/github and my experience is that <strong>simple libraries can be framework agnostic</strong>. But for a more complex set of components (eg Sylius) it's not a real life scenario.</p>
+
+<blockquote>
+  <p>But everything you list (ORM, Datamapper, event listeners) has a framework-agnostic packagist version - it's just a matter of pulling it into the app "the right way", no?</p>
+</blockquote>
+
+<p>Yes it is true these libraries are framework agnostic themselves, but it's natural to have Doctrine with Symfony, Eloquent with Laravel, Phalcon with its own ORM, und so weiter. Of course it's possible to mix them up - something I used to do - but it's not a lucky choice IMHO.</p>
+
+<p>We had this summer two client projects (one Laravel another Symfony) needing the very same functionality. I separated the common parts to a plain php standalone library (composer package), and the framework/orm specific things to their own separate packages. I almost have remained just with interfaces in the first part.</p>
+
+<p>Let's say you have an entity called Promotion.</p>
+
+<p>You want that to work both with Doctrine and Eloquent, and you want that to define in a framework agnostic way.</p>
+
+<p>A real life example is in the Sylius repository, in their framework-agnostic <a href="https://github.com/Sylius/Promotion/blob/master/Model/Promotion.php">promotion package</a>.
+This <em>"agnostic"</em> package has tough bindings to Doctrine and some Symfony components, eg. their event-dispatcher component which is actually a foundation of the Symfony framework and is pretty unnatural on Laravel or on Phalcon.</p>
+
+<p>On the other hand as you see the referenced POPO object defines all its properties:</p>
+
+<pre><code>    protected $id;
+    /**
+     * @var string
+     */
+    protected $code;
+    /**
+     * @var string
+     */
+    protected $name;
+</code></pre>
+
+<p>and so on. In case you want this to work with Eloquent as well, you're in trouble as Eloquent maps these properties via magic getters/setters so having these propertied explicitely defined would prevent Eloquent from working properly. There are workarounds of course, but then you are actually "eloquentizing" your Doctrine (DataMapper) based concept.</p>
+
+<p>Beyond entities, dealing with migrations, views, asset handling, routes, event-listeneres and middlewares in a framework-agnostic way is a very dark area yet these days. These facilities are the properties of frameworks (and they handle it pretty well).</p>
+
+<p>Of course this might change in the future, thanks for <a href="http://www.php-fig.org/psr/">PSRs</a> evolving (eg. the upcoming <a href="https://github.com/php-fig/fig-standards/tree/master/proposed/http-middleware">PSR-15</a> for middlewares standardization).</p>
+
+<p>So according to my experience if one is about to build <strong>complex</strong> framework-agnostic components, that brave person is pretty much ends up experimenting alone. Or simply just gives up :)</p>
+
+                </div>
+
+            </article>
+
+        </div>
+    </div>
+
+
+
+
+
+    <footer>
+    <div class="wrapper">
+        <div class="content">
+            <div class="pure-g">
+
+                <div class="pure-u-1 pure-u-sm-1-2">
+                    &copy; artkonekt 2011 - 2017
+                </div>
+
+                <div class="pure-u-1 pure-u-sm-1-2">
+
+                    <div class="footer-social">
+                        <a href="https://github.com/artkonekt"><img src="/images/githubw.svg" alt="github" title="github"></a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+            <script>
+        $(document).on("ready", function() {
+            var $root = $('html, body');
+            $('a[data-behavior="smooth-scrollto"]').click(function(e) {
+                e.preventDefault();
+
+                var href = $.attr(this, 'href');
+                $root.animate({
+                    scrollTop: $(href).offset().top
+                }, 500, function () {
+                    window.location.hash = href;
+                });
+                return false;
+            });
+        });
+    </script>
+
+            <script type="text/javascript">
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-41126137-3', 'auto');
+            ga('send', 'pageview');
+        </script>
+    
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/gruvbox-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>

@@ -1,0 +1,108 @@
+@import "../configuration/modules/header"
+.menu
+    margin: 0
+    padding: 0
+    font-family: $menu-font-family
+    ul
+        padding: 0
+        margin: 0
+        li
+            display: inline-block
+
+.menu-main
+    position: relative
+    float: right
+    display: none
+    +bp-lg
+        display: block
+    > ul
+        margin: $header-padding-vertical $header-padding-horizontal
+        > li
+            +font-size($menu-font-size)
+            margin: 24px 0 24px 5px
+            color: $menu-cl-normal
+            font-weight: 500
+            letter-spacing: 0
+            +bp-lg
+                margin-left: 15px
+            +bp-xl
+                margin-left: 25px
+                letter-spacing: 2px
+            a
+                color: $menu-cl-normal
+                text-decoration: none
+                cursor: pointer
+                &:hover
+                    color: $menu-cl-hover
+            &.active
+                a
+                    color: $menu-cl-active
+            &.menu-separator
+                border-left: 1px solid $menu-cl-normal
+            &.menu-item-icon
+                position: relative
+                a:hover
+                    border-bottom: none
+                i.ico-default
+                    margin-top: -3px
+                .menu-item-icon-overlay
+                    position: absolute
+                    margin: 0
+                    padding: $font-size-sm/4
+                    width: $font-size-sm
+                    height: $font-size-sm
+                    bottom: $font-size-sm/3*-2
+                    left: $font-size-sm/3*-2
+                    +font-size($font-size-sm)
+                    text-align: center
+                    background-color: $menu-cl-hover
+                    +border-radius(50%)
+            &.menu-item-dropdown
+                position: relative
+                a:hover
+                    border-bottom: none
+
+.menu-mobile
+    //position: relative
+    float: right
+    display: block
+    +bp-lg
+        display: none
+    ul
+        display: none
+        position: absolute
+        overflow-y: auto
+        left: 0
+        top: 80px
+        height: 100vh
+        height: calc(100vh - 80px)
+        width: 100%
+        padding: 30px 0
+        background-color: $menu-cl-open-bg
+        color: $menu-cl-open-text
+        z-index: 999
+        +transition(all .350s ease)
+        li
+            font-weight: 500
+            text-align: center
+            display: block
+            padding: 22px 0 6px
+            border-bottom: 1px solid $menu-cl-open-text
+            margin: 0 20%
+            +bp-sm
+                margin: 0 27%
+            a
+                text-decoration: none
+
+#hamburger
+    color: $menu-cl-normal
+    margin-top: 22px
+    display: inline-block
+
+
+#topmenu
+    +transition(all .20s ease)
+    top: inherit
+    position: static
+    .content
+        border-bottom: 1px solid $menu-cl-separator

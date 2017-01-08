@@ -1,0 +1,25 @@
+{
+    "name": "artkonekt_com",
+    "version": "0.1.0",
+    "description": "artkonekt.com website",
+    "main": "Gruntfile.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/artkonekt/artkonekt.com"
+    },
+    "author": [
+        "Attila Fulop"
+    ],
+    "license": "Unlicensed",
+    "devDependencies": {
+        "grunt": "~0.4.5",
+        "grunt-contrib-compass": "~1.1.1",
+        "grunt-contrib-clean": "~1.0.0",
+        "grunt-contrib-watch": "~1.0.0",
+        "grunt-contrib-copy": "~1.0.0"
+    },
+    "engine": "node >= 0.10"
+}

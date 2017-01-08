@@ -5,14 +5,24 @@
 {% endblock %}
 
 {% block content_wrapper %}
-    <article>
-        <header>
-            <h1>{{ page.title }}</h1>
-        </header>
-        <div>
-            {{ page.blocks.content|raw }}
+    <div class="wrapper">
+        <div class="content">
+
+            <article class="blogpost">
+
+                <header>
+                    <h1>{{ page.title }}</h1>
+                </header>
+
+                <div>
+                    {{ page.blocks.content|raw }}
+                </div>
+
+            </article>
+
         </div>
-    </article>
+    </div>
+
 
 
 {% if site.disqus.shortname and site.disqus.shortname != '' %}

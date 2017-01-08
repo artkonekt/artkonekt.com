@@ -1,0 +1,36 @@
+/**
+ * Utility classes
+ */
+
+/**
+ * The super hero clearfix thing
+ */
+.clearfix
+    +clearfix
+
+/**
+ * Add this class to an image to make it fit within it's fluid parent wrapper while maintaining
+ * aspect ratio.
+ */
+.pure-img
+    max-width: 100%
+    height: auto
+    display: block
+
+.vspace
+    height: (2.5*$siz-general-margin)
+
+.vspace-responsive
+    height: $siz-general-margin
+    +bp-md
+        height: (2.5*$siz-general-margin)
+
+.caret
+    margin-top: $siz-general-margin/2
+    width: $font-size-xl
+    height: auto
+
+.arrow
+    font-size: $font-size-xl
+    a
+        color: $cl-text

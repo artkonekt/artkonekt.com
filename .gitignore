@@ -2,3 +2,5 @@
 /vendor/
 output_dev/
 /sculpin
+node_modules/
+.sass-cache/

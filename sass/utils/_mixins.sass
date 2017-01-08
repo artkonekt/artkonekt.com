@@ -1,0 +1,133 @@
+@import "../base/variables"
+
+=border-top-radius($radius) 
+    border-top-right-radius: $radius
+    border-top-left-radius: $radius
+
+=border-right-radius($radius) 
+    border-bottom-right-radius: $radius
+    border-top-right-radius: $radius
+
+=border-bottom-radius($radius) 
+    border-bottom-right-radius: $radius
+    border-bottom-left-radius: $radius
+
+=border-left-radius($radius) 
+    border-bottom-left-radius: $radius
+    border-top-left-radius: $radius
+
+=border-radius($radius)
+    -webkit-border-radius: $radius
+    -moz-border-radius:    $radius
+    -ms-border-radius:     $radius
+    border-radius:         $radius
+
+=bp-xs
+    @media screen and (max-width: $siz-screen-xs-max)
+        @content
+
+=bp-sm
+    @media screen and (min-width: $siz-screen-sm-min)
+        @content
+
+=bp-md
+    @media screen and (min-width: $siz-screen-md-min)
+        @content
+
+=bp-lg
+    @media screen and (min-width: $siz-screen-lg-min)
+        @content
+
+=bp-xl
+    @media screen and (min-width: $siz-screen-xl-min)
+        @content
+
+=bp-xs-and-below
+    @media screen and (max-width: $siz-screen-xs-max)
+        @content
+
+=bp-sm-and-below
+    @media screen and (max-width: $siz-screen-sm-max)
+        @content
+
+=bp-md-and-below
+    @media screen and (max-width: $siz-screen-md-max)
+        @content
+
+=bp-lg-and-below
+    @media screen and (max-width: $siz-screen-lg-max)
+        @content
+
+//// Layout mixins that apply to a specific layout (responsive range) only ////
+
+=l-xs-only
+    @media screen and (max-width: $siz-screen-xs-max)
+        @content
+
+=l-sm-only
+    @media screen and (min-width: $siz-screen-sm-min) and (max-width: $siz-screen-sm-max)
+        @content
+
+=l-md-only
+    @media screen and (min-width: $siz-screen-md-min) and (max-width: $siz-screen-md-max)
+        @content
+
+=l-lg-only
+    @media screen and (min-width: $siz-screen-lg-min) and (max-width: $siz-screen-lg-max)
+        @content
+
+=l-xl-only
+    @media screen and (min-width: $siz-screen-xl-min)
+        @content
+
+//// Animations/Transitions ////
+=transition($args...)
+    -webkit-transition: $args
+    -moz-transition: $args
+    -ms-transition: $args
+    -o-transition: $args
+    transition: $args
+
+=transform($args...)
+    -webkit-transform: $args
+    -moz-transform: $args
+    transform: $args
+
+=boxshadow($args...)
+    -webkit-box-shadow: $args
+    -moz-box-shadow: $args
+    -ms-box-shadow: $args
+    -o-box-shadow: $args
+    box-shadow: $args
+
+=page-title($line-color:$cl-separator)
+    font-family: $font-heading
+    font-weight: 700
+    +font-size($font-size-title)
+
+=calc($property, $expression)
+    #{$property}: -moz-calc(#{$expression})
+    #{$property}: -o-calc(#{$expression})
+    #{$property}: -webkit-calc(#{$expression})
+    #{$property}: calc(#{$expression})
+
+//// The famous CLEARFIX, now as Mixin! ;) ////
+=clearfix
+    *zoom: 1
+    &:before, &:after
+        content: " "
+        display: table
+    &:after
+        clear: both
+
+/* * * * * * * * * * * * * * T Y P O G R A P H Y  * * * * * * * * * * * * * */
+
+//// REM based font-size with px fallback (for old browser compatibility
+@function calculateRem($size)
+    $remSize: $size / 16px
+    @return $remSize * 1rem
+
+
+=font-size($size)
+    font-size: $size
+    font-size: calculateRem($size)

@@ -1,0 +1,22 @@
+@import "../base/variables"
+@import "../utils/mixins"
+@import "../base/base"
+
+
+=l-wrapper-width()
+    width: 100%
+    +bp-lg
+        width: 60em
+    +bp-xl
+        width: 78em
+
+.wrapper
+    margin: 0 auto
+    +l-wrapper-width()
+
+.content
+    margin-left: $siz-general-margin/2
+    margin-right: $siz-general-margin/2
+    +bp-lg
+        margin-left: 0
+        margin-right: 0

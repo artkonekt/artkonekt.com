@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="robots" content="index, follow">
+
+
+    <title>High Traffic Sites And The Php Framework Dilemma &middot; artkonekt.com &middot; Ecommerce Development, Maintenance &amp; Operations</title>
+    <script src="https://use.typekit.net/wch5yzx.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <link rel="stylesheet" href="/css/vendor/pure/pure-min.css">
+    <link rel="stylesheet" href="/css/vendor/pure/grids-responsive-min.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+                
+</head>
+<body>
+
+    <header class="header">
+
+    <nav class="header-logo">
+        <a href="/"><img src="/images/logox6.svg" id="logo"></a>
+        <h4 class="logo-title">artkonekt</h4>
+    </nav>
+
+    <div class="header-menu">
+        <nav class="menu menu-main">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/blog">Blog</a></li>
+            </ul>
+        </nav>
+    </div>
+
+
+</header>
+        <div class="wrapper">
+        <div class="content">
+
+            <article class="blogpost">
+
+                <header>
+                    <h1>High Traffic Sites And The Php Framework Dilemma</h1>
+                </header>
+
+                <div>
+                    <blockquote>
+  <p>Once someone has came up with the question whether to use an own MVC Framework (PHP) for high traffic webshops. It's my response to that.</p>
+</blockquote>
+
+<p>Scalable systems have several factors, and they should be analyzed separately even if they make up a single system at the end of the day.</p>
+
+<h2 id="existing-or-custom-framework%3F">Existing Or Custom Framework?</h2>
+
+<p>Obviously an existing one. I have authored a <a href="https://bitbucket.org/fulopattila122/konekt-framework2">PHP MVC Framework</a>, and it was a lot of fun for learning. There are still live sites running on it, but as most dev folkz state it, it's only good for gaining experience.
+If you're doing it alone, you'll never be able to compete with systems used by hundreds of thousands and developed by dozens. My experience was that neither am I smarter nor have I the time necessary - so my super framework has always been half-done. Nonetheless you can learn a lot just by using an existing one.</p>
+
+<h2 id="which-php-framework%3F">Which PHP Framework?</h2>
+
+<p>It depends. I have worked with these already (chronological order):</p>
+
+<ol>
+<li><strong>Symfony 1</strong>: was a nice one, lifespan is over, forget it for new projects (Symfony 2 is its successor, but they have actually nothing in common)</li>
+<li><strong>Zend Framework 1</strong>: Used to be among the first ones, but its deprecated.</li>
+<li><strong>CodeIgniter</strong>: Was an early bird as well. Avoid it. They're still not using namespaces and apparently don't give a shit about basic PSRs that are prevalent in the contemporary PHP world.</li>
+<li><strong>Yii 1</strong>: another oldie, was fast, now it's deprecated. (I've seen YII2 as well but haven't been working with it)</li>
+<li><strong>Symfony 2/3</strong>: One of the bests if not the best, but it's a bit chunky and requires an experienced developer.</li>
+<li><strong>Phalcon</strong>: It is written in C language (Zephyr - whatever) so it's freakin' fast. I like it a lot due to it's simplicity and flexibility but it's documentation is kinda crappy compared to the major competitors, and the entire system is generally less comprehensive.</li>
+<li><strong>Laravel</strong>: The people's framework. And is incredibly cool in the details. Fast enough. It's documentation is good, and if you consider <a href="https://laracasts.com">Laracasts</a> then Laravel's docs are unbeatable. There are lots of extensions (similar to Symfony) available. But if you're experienced enough, you'll be probably pouting about it.</li>
+</ol>
+
+<h2 id="performance">Performance</h2>
+
+<p>It's incredibly important to answer yourself the question: <strong>How many users do you want to scale your system for?</strong> Simultaneously 500, 1000, 2000, 5000, 10000, 50000, ... ?</p>
+
+<p>It's an essential matter whether it's a real demand or just a <em>nice to have</em> feature.</p>
+
+<p>Another important factor is that - even if it sounds weird - your framework of choice can only be a bottleneck at a low number of users. Why? Because no framework can help when you have simultaneously 10.000 users (at least not in the PHP world).
+<strong>Real performance is provided by the appropriate architecture/infrastructure.</strong> This consists of multiple parts.</p>
+
+<h3 id="performance-and-the-code">Performance And The Code</h3>
+
+<p>The <strong>most important is not to have something stupid in the code, especially not to execute too many SQL queries</strong>. Things like loop or memory optimization or algorithm sharpening - that many developers think is magic - don't matter too much at this level. Obviously I'm talking about a mature codebase, written at least by middle level developers.
+<strong>The essence of tuning for high traffic is</strong> exactly to unburden the application so <strong>that just a very percentage of the requests will reach your code</strong>.</p>
+
+<h3 id="performance-and-web-server">Performance And Web Server</h3>
+
+<p>I only have experience with apache and nginx. Nginx seems to be a bit faster, but again, what really matters is tuning. It is generally a good idea to use FPM for PHP since they run separately.
+Numbers are important here as well, depending on the number of CPU cores, RAM, etc. There are a lots of articles available, just google it and get your hands dirty.</p>
+
+<h3 id="performance-and-the-database">Performance And The Database</h3>
+
+<p>This is an interesting topic. Similarly to the codebase, it's also important to minimize the number of SQL queries hitting the DB servers as much as possible - if it's possible at all.</p>
+
+<p>For example in case of a webshop it would be stupid to keep querying the homepage/product index/product page trinity all the time. In my experience these constitute about 70% of the entire traffic. Cart and purchase operations obviously can't avoid hitting the database (except for querying unmodified carts).</p>
+
+<p>It's important that your DB structure is appropriate, using indexes properly, knowing clearly which tables are being used more for reading and which ones rather for writing. In case of MySQL it's possible to play with storage engines accordingly.</p>
+
+<p>If the load is really high, then you need a DB cluster. I happened to work with some people from the porn industry (the IT part ;) ) and they use a separate set of servers for writing and another set for reading. Btw. this scenario is supported out of the box by Laravel and Phalcon.</p>
+
+<p>Another trick is caching query results, we usually use redis for that. This is where the Doctrine ORM excels out of the box.</p>
+
+<h3 id="performance-and-memcache%2Fredis">Performance And Memcache/Redis</h3>
+
+<p>These memory based cache systems are pretty versatile. Apart from query caching as mentioned, there are many use cases. If you're application is running on multiple servers, you need to access session data from some common store - we use distributed redis for that.</p>
+
+<p>It was an interesting experience that with redis we could reach 300.000 req/s when we switched from TCP/IP to unix sockets (both via localhost). But as far as I read, redis should be able to serve 1 million requests per sec.</p>
+
+<h3 id="http-cache">HTTP Cache</h3>
+
+<p><strong>This is the real thing</strong>. We use varnish for that, but there are many others, nginx for example. The choice of software is actually less important, but according to my experience <strong>this is what makes the dramatic difference</strong>.</p>
+
+<p>Your application sets the TTL (time to live) of the specific elements (pages, images, assets, etc) and then varnish will spit them back from the memory for the upcoming requests. And here comes the essence of it: your framework can even be written in assembly, it doesn't matter, because it won't be used.</p>
+
+<p>Of course the party starts here: there are elements on your page which are perfectly the same for all your visitors and there are some of them which are user specific (cart, account, etc). Basically there are two solutions for that, one of them is called <strong>ESI</strong>. Another one is that you give a common skeleton, and you separately query the user specific parts by AJAX. Fortunately this can also be cached by varnish on a session basis, so it's likely that the request still won't hit your code, no php and no sql will be executed.</p>
+
+<p>Another party animal is cache invalidation. Your application can instruct Varnish upon some events to remove a page from the cache - and request a fresh one. But what if a product gets a price update, which pages do we need to invalidate? This is what you use tagging for. In case a product is present on a page, we tag it on HTTP header level (by the product id). In case a product gets modified, we only have to instruct Varnish to purge every element from the cache with the specific tag. This is awesome.</p>
+
+<p>Lastly, it's important to configure Varnish so that these internal HTTP "announcments" don't go out in the wild.</p>
+
+<h3 id="cdn">CDN</h3>
+
+<p>Some parts of the HTTP cache can be outsourced to CDNs. This is emphasized in case your audience is geographically distributed. I'd recommend Cloudflare, but there are many other rockstars like rackspace, amazon s3+cloudfront, maxcdn, etc.</p>
+
+<h2 id="e-commerce-platform">E-commerce Platform</h2>
+
+<p>We've been using quite several ecommerce platforms during the years. Developing an own one can be pretty time and money consuming for the same reasons stated by MVC frameworks above. We made some custom sites as well, but lately we're working with Sylius. I wouldn't say I recommend it - not that it's not good. It has a steep learning curve.</p>
+
+<p>I had my years with Magento. It's good platform, but incredibly complex. I will never go back.</p>
+
+<p>There are a lots of new ecommerce platforms, I recommend reading these articles: <a href="https://medium.com/@salvoadriano/building-the-next-generation-ecommerce-26093f98d2d7#.sivhy43hv">this one</a> and <a href="https://blog.fortrabbit.com/ecommerce-status-quo-2016">this one</a>.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>If still a custom system, then I think the framework should be chosen based on which one fits your level of knowledge and your coding style.</p>
+
+<p>The framework primarily should serve your needs from the code maintainability perpective.</p>
+
+<p>If you're experienced and/or educated enough, there's a high chance you'll use Symfony. But then, you already know all this :)</p>
+
+<p>But in case you're not, I recommend Laravel. It's a modern, solid, unitary concept with well-tried patterns, great docs, videos(!) and community. Most important components already exists.</p>
+
+<p>Of course you have to check out all of them and pick the one you like :)</p>
+
+                </div>
+
+            </article>
+
+        </div>
+    </div>
+
+
+
+
+
+    <footer>
+    <div class="wrapper">
+        <div class="content">
+            <div class="pure-g">
+
+                <div class="pure-u-1 pure-u-sm-1-2">
+                    &copy; artkonekt 2011 - 2017
+                </div>
+
+                <div class="pure-u-1 pure-u-sm-1-2">
+
+                    <div class="footer-social">
+                        <a href="https://github.com/artkonekt"><img src="/images/githubw.svg" alt="github" title="github"></a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+            <script>
+        $(document).on("ready", function() {
+            var $root = $('html, body');
+            $('a[data-behavior="smooth-scrollto"]').click(function(e) {
+                e.preventDefault();
+
+                var href = $.attr(this, 'href');
+                $root.animate({
+                    scrollTop: $(href).offset().top
+                }, 500, function () {
+                    window.location.hash = href;
+                });
+                return false;
+            });
+        });
+    </script>
+
+            <script type="text/javascript">
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-41126137-3', 'auto');
+            ga('send', 'pageview');
+        </script>
+    
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/gruvbox-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>

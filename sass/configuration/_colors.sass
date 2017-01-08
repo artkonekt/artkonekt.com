@@ -1,0 +1,119 @@
+///
+///    ========================================================================
+///    REAL COLOR NAMES SECTION
+///    ========================================================================
+///
+///    Set your project/theme colors here
+///    EVERY COLOR YOU'RE USING SHOULD BE SET WITH
+///    It's very own name as a variable, prefixed with "cl-"
+///
+///    EXAMPLES: (names of colors from: http://chir.ag/projects/name-that-color)
+///
+///    $cl-algae-green: #93DFB8
+///    $cl-blush-pink:  #FF6FFF
+///
+///    Real color names MUST NOT be used in modules, only in this single configuration file
+///    Modules MUST use the semantic color names, see the next section
+
+$cl-black:                      black
+$cl-white:                      white
+$cl-outer-space:                #313436
+$cl-blue-lagoon:                #027F90
+$cl-aquamarine-blue:            #83DAE6
+$cl-scooter:                    #31b3c7
+$cl-sunglow:                    #FFC13B
+$cl-sunset-orange:              #FF493B
+$cl-lemon-grass:                #9B9C8E
+$cl-submarine:                  #B1C4C7
+$cl-alabaster:                  #f8f8f8
+
+///
+///    ========================================================================
+///    SEMANTIC COLOR NAMES SECTION
+///    ========================================================================
+///
+///    These are the variables to be used by modules, utils, states, etc.
+///    Setting them here is a kind of a `dependency injection` so modules
+///    rely on these settings. Therefore you have a central place for controlling
+///    the colors of the entire *system* you're building.
+///    That's what you do, don't you?
+
+///    BASE COLORS
+///    ------------------------------------------------------------------------
+$cl-base-background:            $cl-white
+
+$cl-text:                       $cl-outer-space
+$cl-text-heading:               $cl-outer-space
+$cl-text-secondary:             $cl-lemon-grass
+$cl-text-muted:                 $cl-submarine
+
+$cl-link-default:               $cl-scooter
+
+$cl-separator:                  $cl-alabaster
+
+// Panel bg is a big question whether actually belongs here.
+// Since it's being used by several modules (and not only by panel)
+// decided to leave here as part of the global settings
+$cl-panel-bg:                   $cl-alabaster
+
+
+///    BOOTSTRAP SEMANTIC COLORS
+///    ------------------------------------------------------------------------
+$cl-primary:                    $cl-scooter
+$cl-primary-ontext:             $cl-white //The color of text to be used in with
+$cl-success:                    $cl-aquamarine-blue
+$cl-success-ontext:             $cl-text
+$cl-info:                       $cl-scooter
+$cl-info-ontext:                $cl-white
+$cl-warning:                    $cl-sunglow
+$cl-warning-ontext:             $cl-text
+$cl-danger:                     $cl-sunset-orange
+$cl-danger-ontext:              $cl-white
+
+///    BOOTSTRAP SEMANTIC STATE COLORS
+///    ------------------------------------------------------------------------
+///
+///    There are two different styles, uncomment/comment the one you like
+///
+///    VARIANT 1: The "Classic" Bootstrap style:
+///    ------------------------------------------
+///
+///    CLASSIC STYLE START>>>
+//$cl-state-success-text:             $cl-success
+//$cl-state-success-bg:               lighten($cl-state-success-text, 47%)
+//$cl-state-success-border:           darken(adjust-hue($cl-state-success-bg, -10), 5%)
+//
+//$cl-state-info-text:                $cl-info
+//$cl-state-info-bg:                  desaturate(lighten($cl-state-info-text, 54%), 17%)
+//$cl-state-info-border:              darken(adjust-hue($cl-state-info-bg, -10), 7%)
+//
+//$cl-state-warning-text:             darken($cl-warning, 13%)
+//$cl-state-warning-bg:               desaturate(lighten($cl-warning, 35%), 7%)
+//$cl-state-warning-border:           darken(adjust-hue($cl-state-warning-bg, -10), 7%)
+//
+//$cl-state-danger-text:              $cl-danger
+//$cl-state-danger-bg:                lighten($cl-state-danger-text, 47%)
+//$cl-state-danger-border:            darken(adjust-hue($cl-state-danger-bg, -10), 5%)
+//     <<<CLASSIC STYLE END
+
+///    VARIANT 2: Opaque/flat style:
+///    ------------------------------------------
+///
+///    FLAT STYLE START>>>
+$cl-state-success-text:         $cl-white
+$cl-state-success-bg:           $cl-success
+$cl-state-success-border:       $cl-success
+
+$cl-state-info-text:            $cl-white
+$cl-state-info-bg:              $cl-info
+$cl-state-info-border:          $cl-info
+
+$cl-state-warning-text:         $cl-text
+$cl-state-warning-bg:           $cl-warning
+$cl-state-warning-border:       $cl-warning
+
+$cl-state-danger-text:          $cl-white
+$cl-state-danger-bg:            $cl-danger
+$cl-state-danger-border:        $cl-danger
+//     <<<FLAT STYLE END
+
