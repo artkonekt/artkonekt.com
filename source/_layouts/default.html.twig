@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% block head_meta %}
+        <meta name="robots" content="noindex, follow">
+    {% endblock %}
+
+
+    <title>{% block title %}{{ page.title }}{% endblock %} &middot; {{ site.title }} &middot; {{ site.subtitle }}</title>
+    <script src="https://use.typekit.net/wch5yzx.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <link rel="stylesheet" href="/css/vendor/pure/pure-min.css">
+    <link rel="stylesheet" href="/css/vendor/pure/grids-responsive-min.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    {% block head_styles %}
+    {% endblock %}
+    {% block head_scripts %}
+    {% endblock %}
+
+</head>
+<body>
+
+    {% block content_wrapper %}{% block content %}{% endblock %}{% endblock %}
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+    {% block scripts %}
+    {% endblock %}
+    <script>
+        $(document).on("ready", function() {
+            var $root = $('html, body');
+            $('a[data-behavior="smooth-scrollto"]').click(function(e) {
+                e.preventDefault();
+
+                var href = $.attr(this, 'href');
+                $root.animate({
+                    scrollTop: $(href).offset().top
+                }, 500, function () {
+                    window.location.hash = href;
+                });
+                return false;
+            });
+        });
+    </script>
+
+    {% if site.google_analytics_tracking_id %}
+        <script type="text/javascript">
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', '{{site.google_analytics_tracking_id}}', 'auto');
+            ga('send', 'pageview');
+        </script>
+    {% endif %}
+
+    {% block scripts_after %}
+    {% endblock %}
+
+</body>
+</html>

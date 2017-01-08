@@ -1,0 +1,33 @@
+{
+    "name": "artkonekt/artkonekt.com",
+    "description": "artkonekt.com website",
+    "type": "sculpin-skeleton",
+    "license": "Unlicensed",
+    "authors": [
+        {
+            "name": "Storm Storez Srl-d",
+            "homepage": "https://artkonekt.com"
+        },
+        {
+            "name": "Attila Fulop",
+            "homepage": "https://github.com/fulopattila122"
+        }
+    ],
+    "require": {
+	  "sculpin/sculpin": "^2.1@dev",
+	  "dflydev/embedded-composer": "^1.0@dev",
+      "kriswallsmith/assetic": "1.1.2"
+    },
+    "config": {
+        "component-dir": "source/components",
+        "components": []
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "ComponentManager\\ComponentManager::postComposerInstall"
+        ]
+    },
+    "autoload": {
+        "classmap": ["component-manager.php"]
+    }
+}
