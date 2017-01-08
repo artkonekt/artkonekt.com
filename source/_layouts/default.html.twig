@@ -10,10 +10,6 @@
 
 
     <title>{% block title %}{{ page.title }}{% endblock %} &middot; {{ site.title }} &middot; {{ site.subtitle }}</title>
-    <script src="https://use.typekit.net/wch5yzx.js"></script>
-    <script>try{Typekit.load({ async: true });}catch(e){}</script>
-    <link rel="stylesheet" href="/css/vendor/pure/pure-min.css">
-    <link rel="stylesheet" href="/css/vendor/pure/grids-responsive-min.css">
     <link rel="stylesheet" href="/css/style.css">
 
     {% block head_styles %}
@@ -30,6 +26,8 @@
 
     {% include '_footer' %}
 
+    <script src="https://use.typekit.net/wch5yzx.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
     {% block scripts %}
     {% endblock %}
