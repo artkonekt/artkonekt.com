@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Artkonekt - Ecommerce Development, Maintenance &amp; Operations</title>
+	<script src="https://use.typekit.net/wch5yzx.js"></script>
+	<script>try{Typekit.load({ async: true });}catch(e){}</script>
+	<link rel="stylesheet" href="a/vendor/pure/pure-min.css">
+	<link rel="stylesheet" href="a/vendor/pure/grids-responsive-min.css">
+	<style>
+	  body {
+	  	margin: 0;
+	  	padding: 0;
+	  	font-family: "adelle-sans", sans-serif;
+	  	overflow-x: hidden;
+	  	color: #313436;
+	  }
+
+	  p {
+	  	font-weight: 100;
+	  	margin: 5px 0;
+	  	font-size: 0.83em;
+	  }
+
+	  a {
+	  	text-decoration: none;
+	  	color: #31b3c7;
+	  }
+
+	  .wrapper {
+	  	width: 100%;
+	  	overflow: hidden;
+	  }
+
+	  #logo {
+	  	margin-top: 20px;
+	  	width: 75px;
+	  	height: auto;
+	  	transform: rotate(0.01deg);
+	  }
+
+	  .logo-title {
+	  	font-weight: 100;
+	  	margin: 0;
+	  	font-size: 19px;
+	  }
+
+	  .caret {
+	  	margin-top: 15px;
+	  	width: 35px;
+	  	height: auto;
+	  }
+
+	  .article {
+	  	margin: 0;
+	  	padding: 20px;
+	  	width: 100%;
+	  	height: 100%;
+	  	height: 100vh;
+	  	position: relative;
+	  	text-align: center;
+	  	max-width: 100%;
+	  	transition: all 0.6s ease-in-out;
+	  	box-sizing: border-box;
+	  }
+
+	  .article h1 {
+	  	font-size: 35px;
+	  	margin: 1em 0 0; 
+	  }
+
+	  .article h2 {
+	  	font-size: 27px;
+	  	font-weight: 100;
+	  	margin: 1em 0 0.1em; 
+	  }
+
+	  .article h1 + h2 {
+	  	margin-top: 0;
+	  }
+
+	  .article h3 {
+	  	font-size: 16px;
+	  	font-weight: 100;
+	  	margin: 3.5em 0 0.1em;
+	  	color: #616161;
+	  	font-style: italic;
+	  }
+
+	  .article h3 span {
+	  	font-style: normal;
+	  }
+
+	  .article-dark {
+	  	background-color: #313436;
+	  	color: white;
+	  }
+
+	  hr {
+	  	margin: 15px 85px 0;
+	  	height: 1px;
+	  	color: #313436;
+	  	background: #313436;
+	  	font-size: 0;
+	  	border: 0;
+	  }
+
+	  .article-dark hr, .article-primary hr {
+	  	color: #fff;
+	  	color: rgba(255,255,255,0.55);
+	  	background: #fff;
+	  	background: rgba(255,255,255,0.55);
+	  }
+
+	  .article-primary {
+	  	background-color: #31b3c7;
+	  	color: white;
+	  }
+
+	  .text-primary {
+	  	color: #31b3c7;
+	  }
+
+	  .arrow {
+	  	font-size: 35px;
+	  }
+
+	  .arrow a {
+	  	color: #313436;
+	  }
+
+	  .article-dark .arrow a,
+	  .article-primary .arrow a {
+	  	color: #fff;
+	  }
+
+	@media only screen and (min-width: 568px) {
+		#logo {
+	  		margin-top: 50px;
+	  	}
+		.article h1 {
+	  		font-size: 55px;
+	  		margin-top: 2em; 
+	  	}
+
+	  	.article h2 {
+	  		font-size: 35px;
+	  		margin-top: 1em; 
+	  	}
+
+	  	hr {
+	  		margin: 55px 100px 0;
+	  	}
+
+	  	p {
+	  		margin: inherit;
+	  		font-size: inherit;
+	  }
+		   
+	}
+
+
+
+
+	</style>
+</head>
+<body>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-41126137-3', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<div class="wrapper">
+	<section class="article" id="hero">
+		<img src="logox6.svg" id="logo" />
+		<h4 class="logo-title">artkonekt</h4>
+		<h1>artkonekt is a team of web developers</h1>
+		<h2>we create, maintain and operate <strong class="text-primary">ecommerce</strong> sites</h2>
+		<div class="arrow"><a href="#work" data-behavior="smooth-scrollto"><img src="down.svg" class="caret" alt="down"></a></div>
+	</section>
+	<section class="article article-dark" id="work">
+		<h1>if you have an old and complex system</h1>
+		<h2>we can <strong class="text-primary">streamline</strong> it</h2>
+		<div class="arrow"><a href="#about" data-behavior="smooth-scrollto"><img src="downw.svg" class="caret" alt="down"></a></div>
+	</section>
+	<section class="article article-primary" id="about">
+		<h1>we develop complex web applications and frontend</h1>
+		<h2>our stack is PHP (Symfony, Laravel), sass, javascript (vuejs, node)</h2>
+		<div class="arrow"><a href="#cloud" data-behavior="smooth-scrollto"><img src="downw.svg" class="caret" alt="down"></a></div>
+	</section>
+	<section class="article article-dark" id="cloud">
+		<h1>we can also build and maintain your <strong class="text-primary">cloud</strong> infrastructure</h1>
+		<h2>digital ocean, amazon, nginx, varnish, redis</h2>
+		<div class="arrow"><a href="#method" data-behavior="smooth-scrollto"><img src="downw.svg" class="caret" alt="down"></a></div>
+	</section>
+	<section class="article" id="method">
+		<h1>hire us for at least for 3 months</h1>
+		<h2>we usually do 2 weeks iterations of scrum and billing per hour</h2>
+		<h3>"Your time reports are very, very fair" <span>- Barni (<a href="http://coaching4you.ro">coaching4you.ro</a>)</span></h2>
+		<div class="arrow"><a href="#contact" data-behavior="smooth-scrollto"><img src="down.svg" class="caret" alt="down"></a></div>
+	</section>
+	<section class="article article-dark" id="contact">
+		<h1>contact</h1>
+		<div class="pure-g">
+			<div class="pure-u-1 pure-u-md-1-3"></div>
+			<div class="pure-u-1 pure-u-md-1-3">
+				<hr>
+				<h2>support</h2>
+				<p><a href="mailto:support@artkonekt.com">support@artkonekt.com</a></p>
+				<p>
+					<a href="http://support.artkonekt.com/">support.artkonekt.com</a>
+				</p>
+				<p>
+					tel: <a href="tel:+40316300273">+40-316-300-273</a>
+				</p>
+				<p>
+					mon - fri: 9:00 - 17:30 (eet)<br>
+				</p>
+				<p>&nbsp;</p>
+			</div>
+			<div class="pure-u-1 pure-u-md-1-3"></div>
+		</div>
+		<div class="pure-g">
+			<div class="pure-u-1 pure-u-md-1-2">
+				<hr>
+				<h2>artkonekt rulez srl</h2>
+				<p><a href="mailto:artkonekt@artkonekt.com">artkonekt@artkonekt.com</a></p>
+				<p>
+					TAX ID: 33622972<br>
+				</p>
+				<p>
+					sf. gheorghe, covasna<br>
+					str. oltului nr. 8.<br>
+					romania
+				</p>
+			</div>
+			<div class="pure-u-1 pure-u-md-1-2">
+				<hr>
+				<h2>storm storez srl-d</h2>
+				<p><a href="mailto:artkonekt@artkonekt.com">artkonekt@artkonekt.com</a></p>
+				<p>
+					TAX ID: RO35409777
+				</p>
+				<p>
+					sf. gheorghe, covasna<br>
+					str. oltului nr. 8.<br>
+					romania
+				</p>
+			</div>
+		</div>
+	</section>
+</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+    <script>
+        $(document).on("ready", function() {
+            var $root = $('html, body');
+            $('a[data-behavior="smooth-scrollto"]').click(function(e) {
+                e.preventDefault();
+
+                var href = $.attr(this, 'href');
+                $root.animate({
+                    scrollTop: $(href).offset().top
+                }, 500, function () {
+                    window.location.hash = href;
+                });
+                return false;
+            });
+        });
+    </script>	
+</body>
+</html>
