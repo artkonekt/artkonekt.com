@@ -1,0 +1,19 @@
+@import "../configuration/modules/hero"
+
+.hero
+    padding: 3em
+
+.hero-dark
+    color: $cl-text-ondark
+    .hero-copy, .hero-title, .hero-subtitle
+        color: $cl-text-ondark
+
+.hero-title
+    margin: 0 0 $siz-general-margin
+    font-family: $hero-title-font-family
+    +font-size($hero-title-font-size)
+
+.hero-copy
+    margin: 0 0 0.83em
+    font-family: $hero-copy-font-family
+    +font-size($hero-copy-font-size)

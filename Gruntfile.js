@@ -30,7 +30,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     grunt.registerTask(
-        'build',
+        'default',
         'Compiles sass sheets and copies the files to the public css directory.',
         ['clean', 'compass']
     );

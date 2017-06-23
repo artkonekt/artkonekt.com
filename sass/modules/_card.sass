@@ -1,23 +1,25 @@
 .card
-    margin: $siz-general-margin/2 0
-    .card-body
-        a
-            text-decoration: none
-            h3
-                +font-size($font-size-sl)
-        padding: $siz-general-margin/2
-        background-color: $cl-panel-bg
-        .card-title
-            margin: 0
-            line-height: 1.17
-            font-weight: 100
-        .card-date
-            +font-size($font-size-sm)
-            color: $cl-text-secondary
-            margin: 0
+    margin: $siz-general-vmargin 0
     &.card-primary
         .card-body
             background-color: $cl-primary
 
-.card-copy
+.card-title
+    margin: 0 0 1.35em
+    line-height: 1.17
+    +font-size($font-size-lg)
+
+.card-date
     +font-size($font-size-sm)
+    color: $cl-text-secondary
+    margin: 0
+
+.card-subtitle
+    text-transform: uppercase
+    letter-spacing: 2px
+    margin: 0 0 .83em
+    color: $cl-text-secondary
+    font-family: $font-copy
+    font-weight: 300
+
+.card-copy
