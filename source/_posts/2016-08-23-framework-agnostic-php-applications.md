@@ -1,5 +1,6 @@
 ---
 title: Framework Agnostic PHP Applications
+subtitle: Is it feasable<br>to develop for multiple<br>PHP frameworks at once?
 tags:
     - php
     - frameworks
@@ -10,7 +11,9 @@ tags:
     - composer
     - packagist
 excerpt: There's an ongoing debate about making PHP applications/libraries to be framework agnostic. While the approach is 100% valid, there are many practical issues.
-image: php_framework_agnostic.jpg
+image: flirt_small.jpg
+hero_image: flirt.jpg
+hero_position: 25%
 ---
 
 This post is a transcript of a discussion between me and [Bruno Skvorc](https://www.sitepoint.com/author/bskvorc/) under a [Sitepoint article about Phalcon](https://www.sitepoint.com/up-and-running-with-the-fastest-php-framework-on-php7-in-5-mins/). This way I'd like to send Bruno a big thank you for the inspiring conversation! ;)
