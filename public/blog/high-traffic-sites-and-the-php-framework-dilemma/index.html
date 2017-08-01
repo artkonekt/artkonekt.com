@@ -8,6 +8,7 @@
 
 
     <title>High Traffic Sites And The Php Framework Dilemma &middot; artkonekt.com &middot; Ecommerce Development, Maintenance &amp; Operations</title>
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:lel700|Montserrat:300,300i,700" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
 
                 
@@ -15,38 +16,55 @@
 <body>
 
     <header class="header">
-
-    <nav class="header-logo">
-        <a href="/"><img src="/images/logox6.svg" id="logo"></a>
-        <h4 class="logo-title">artkonekt</h4>
-    </nav>
-
-    <div class="header-menu">
-        <nav class="menu menu-main">
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/blog">Blog</a></li>
-            </ul>
+        <div class="wrapper clearfix">
+    <div class="content">
+        <nav class="header-logo">
+            <a href="/"><img src="/images/logox6.svg" id="logo"></a>
         </nav>
+
+        <div class="header-menu">
+            <nav class="menu menu-main">
+                <ul>
+                    <li><a href="/">home</a></li>
+                    <li><a href="/blog">blog</a></li>
+                    <li><a href="/now">now</a></li>
+                    <li><a href="/jobs">jobs</a></li>
+                    <li><a href="/contact">contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </div>
+</div>
+                    <div class="wrapper">
+            <style>
+                .header {
+                    background-image: url(/images/blog/dodgem.jpg);
+                 background-position: center 53%;
+                                }
+            </style>
+            <section class="hero hero-dark">
+                <h1 class="hero-title">
+                    <span class="hero-shade">High Traffic Sites And The Php Framework Dilemma</span>
+                </h1>
+                                <p class="hero-copy">
+                    <span class="hero-shade">Once someone has come up with the question<br>whether to use an own MVC Framework (PHP) for high traffic webshops.<br>It's my response to that.</span>
+                </p>
+                            </section>
+
+        </div>
+        </header>
 
 
-</header>
         <div class="wrapper">
         <div class="content">
 
-            <article class="blogpost">
+            <div class="page-container page-container-light">
 
-                <header>
-                    <h1>High Traffic Sites And The Php Framework Dilemma</h1>
-                </header>
+                <div class="page-inner-container">
 
-                <div>
-                    <blockquote>
-  <p>Once someone has came up with the question whether to use an own MVC Framework (PHP) for high traffic webshops. It's my response to that.</p>
-</blockquote>
-
-<p>Scalable systems have several factors, and they should be analyzed separately even if they make up a single system at the end of the day.</p>
+                    
+                    <article class="blogpost">
+                        <p>Scalable systems have several factors, and they should be analyzed separately even if they make up a single system at the end of the day.</p>
 
 <h2 id="existing-or-custom-framework%3F">Existing Or Custom Framework?</h2>
 
@@ -140,34 +158,37 @@ Numbers are important here as well, depending on the number of CPU cores, RAM, e
 
 <p>Of course you have to check out all of them and pick the one you like :)</p>
 
+                    </article>
+
+                    <div class="blogpost">
+                                                    <div id="disqus_thread"></div>
+                            <script type="text/javascript">
+                                /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                                var disqus_shortname = 'artkonekt'; // required: replace example with your forum shortname
+
+
+                                        
+                                        
+                                        
+                                        
+                                /* * * DON'T EDIT BELOW THIS LINE * * */
+                                (function () {
+                                    var dsq = document.createElement('script');
+                                    dsq.type = 'text/javascript';
+                                    dsq.async = true;
+                                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                                })();
+                            </script>
+                            <noscript>Please enable JavaScript to view the
+                                <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by
+                                    Disqus.</a>
+                            </noscript>
+                                            </div>
+
+
                 </div>
-
-            </article>
-
-            <div class="blogpost">
-                                    <div id="disqus_thread"></div>
-                    <script type="text/javascript">
-                        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-                        var disqus_shortname = 'artkonekt'; // required: replace example with your forum shortname
-
-
-                                
-                                
-                                
-                                
-                        /* * * DON'T EDIT BELOW THIS LINE * * */
-                        (function () {
-                            var dsq = document.createElement('script');
-                            dsq.type = 'text/javascript';
-                            dsq.async = true;
-                            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-                        })();
-                    </script>
-                    <noscript>Please enable JavaScript to view the
-                        <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
-                    </noscript>
-                            </div>
+            </div>
 
 
         </div>

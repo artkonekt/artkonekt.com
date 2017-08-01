@@ -4,3 +4,4 @@ output_dev/
 /sculpin
 node_modules/
 .sass-cache/
+public/jobs/.env.php

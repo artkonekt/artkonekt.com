@@ -1,16 +1,17 @@
 ---
 title: High Traffic Sites And The Php Framework Dilemma
+subtitle: Once someone has come up with the question<br>whether to use an own MVC Framework (PHP) for high traffic webshops.<br>It's my response to that.
 tags:
     - php
     - frameworks
     - scalability
     - varnish
     - caching
-excerpt: Once someone has came up with the question whether to use an own MVC Framework for high traffic webshops. The framework doesn't matter for that. Here's why.
-image: scaling_and_framework.jpg
+excerpt: Once someone has come up with the question whether to use an own MVC Framework for high traffic webshops. The framework doesn't matter for that. Here's why.
+image: dodgem_small.jpg
+hero_image: dodgem.jpg
+hero_position: 53%
 ---
-
-> Once someone has came up with the question whether to use an own MVC Framework (PHP) for high traffic webshops. It's my response to that.
 
 Scalable systems have several factors, and they should be analyzed separately even if they make up a single system at the end of the day.
 

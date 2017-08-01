@@ -1,64 +1,92 @@
 ---
 layout: default
-title: Blog
+title: E-commerce Worker's Blog
 generator: pagination
 use:
-    - posts
+- posts
 
 ---
 
-<div class="wrapper">
-    <div class="content">
+{% block hero %}
+    <style>
+        .header {
+            background-image: url(/images/engine_room.jpg);
+            background-position: center 26%;
+        }
+    </style>
+    <div class="wrapper">
+        <section class="hero hero-dark">
+            <h1 class="hero-title">
+                <span class="hero-shade">e-commerce worker's</span><br>
+                <span class="hero-shade">blog</span>
+            </h1>
+            <p class="hero-copy">
+                <span class="hero-shade">see how <strong>webshops</strong> actually work</span>
+            </p>
+        </section>
+    </div>
+{% endblock %}
 
-        <div class="blog">
+{% block content %}
+    <div class="wrapper">
+        <div class="content">
 
-            <header>
-                <h1>{{ page.title }}</h1>
-            </header>
+            <div class="page-container page-container-light">
 
-            <div class="pure-g pure-g-gutter">
-                {% for post in page.pagination.items %}
-                    <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-3">
+                <div class="page-inner-container">
 
-                        <article class="card">
-                            <a href="{{ post.url }}" title="{{ post.title }}">
-                                <img src="/images/blog/{{ post.image|default('default.jpg') }}" alt="{{ post.title }}" class="pure-img" />
-                            </a>
-                            <div class="card-body">
 
-                                <p class="card-date">{{ post.date|date("Y-m-d") }}</p>
+                    <div class="pure-g pure-g-gutter">
+                        {% for post in page.pagination.items %}
+                            <div class="pure-u-1 pure-u-sm-1-2 pure-u-lg-1-3">
 
-                                <a href="{{ post.url }}" title="{{ post.title }}">
-                                    <h3 class="card-title">{{ post.title }}</h3>
-                                </a>
+                                <article class="card">
+                                    <a href="{{ post.url }}" title="{{ post.title }}">
+                                        <img src="/images/blog/{{ post.image|default('default.jpg') }}"
+                                             alt="{{ post.title }}" class="pure-img"/>
+                                    </a>
+                                    <div class="card-body">
 
-                                <p class="card-copy">
-                                    {{ post.excerpt|default('...') }}
-                                </p>
+                                        <p class="card-date">{{ post.date|date("Y-m-d") }}</p>
+
+                                        <h3 class="card-title">
+                                            <a href="{{ post.url }}">
+                                                {{ post.title }}
+                                            </a>
+                                        </h3>
+
+
+
+                                        <p class="card-copy">
+                                            {{ post.excerpt|default('...') }}
+                                        </p>
+
+                                    </div>
+                                </article>
 
                             </div>
-                        </article>
+                        {% endfor %}
 
+                        <div>
+                            {% if page.pagination.previous_page or page.pagination.next_page %}
+                                <nav class="article clearfix">
+                                    {% if page.pagination.previous_page %}
+                                        <a class="previous" href="{{ site.url }}{{ page.pagination.previous_page.url }}"
+                                           title="Previous Page"><span class="title">Previous Page</span></a>
+                                    {% endif %}
+                                    {% if page.pagination.next_page %}
+                                        <a class="next" href="{{ site.url }}{{ page.pagination.next_page.url }}"
+                                           title="Next Page"><span class="title">Next Page</span></a>
+                                    {% endif %}
+                                </nav>
+                            {% endif %}
+                        </div>
                     </div>
-                {% endfor %}
 
-                <div>
-                    {% if page.pagination.previous_page or page.pagination.next_page %}
-                        <nav class="article clearfix">
-                            {% if page.pagination.previous_page %}
-                                <a class="previous" href="{{ site.url }}{{ page.pagination.previous_page.url }}" title="Previous Page"><span class="title">Previous Page</span></a>
-                            {% endif %}
-                            {% if page.pagination.next_page %}
-                                <a class="next" href="{{ site.url }}{{ page.pagination.next_page.url }}" title="Next Page"><span class="title">Next Page</span></a>
-                            {% endif %}
-                        </nav>
-                    {% endif %}
                 </div>
+
             </div>
-
         </div>
-
     </div>
-</div>
 
-
+{% endblock %}

@@ -1,0 +1,26 @@
+[
+    {
+        "title": "PHP Developer",
+        "description": "Make applications with PHP 7, Laravel, Symfony, Phalcon",
+        "locations": [
+            "🌃 Cluj, RO",
+            "🌄 Sf. Gheorghe, RO",
+            "🌆 Budapest, HU",
+            "🏝 Remote",
+            "🚀 Berlin (2018)"
+        ],
+        "url": "https://artkonekt.com/jobs/php-developer"
+    },
+    {
+        "title": "Frontend Developer",
+        "description": "Create nifty UI with sass, bootstrap & vue.js",
+        "locations": [
+            "🌃 Cluj, RO",
+            "🌄 Sf. Gheorghe, RO",
+            "🌆 Budapest, HU",
+            "🏝 Remote",
+            "🚀 Berlin (2018)"
+        ],
+        "url": "https://artkonekt.com/jobs/frontend-developer"
+    }
+]

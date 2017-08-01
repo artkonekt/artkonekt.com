@@ -4,51 +4,90 @@
     <meta name="robots" content="index, follow">
 {% endblock %}
 
+{% block hero %}
+    {% if page.hero_image %}
+        <div class="wrapper">
+            <style>
+                .header {
+                    background-image: url(/images/blog/{{ page.hero_image }});
+                {% if page.hero_position %} background-position: center {{ page.hero_position }};
+                {% endif %}
+                }
+            </style>
+            <section class="hero hero-dark">
+                <h1 class="hero-title">
+                    <span class="hero-shade">{{ page.title }}</span>
+                </h1>
+                {% if page.subtitle %}
+                <p class="hero-copy">
+                    <span class="hero-shade">{{ page.subtitle|raw }}</span>
+                </p>
+                {% endif %}
+            </section>
+
+        </div>
+    {% endif %}
+{% endblock %}
+
 {% block content_wrapper %}
     <div class="wrapper">
         <div class="content">
 
-            <article class="blogpost">
+            <div class="page-container page-container-light">
 
-                <header>
-                    <h1>{{ page.title }}</h1>
-                </header>
+                <div class="page-inner-container">
 
-                <div>
-                    {{ page.blocks.content|raw }}
+                    {% if not page.hero_image %}
+                        <section class="hero">
+                            <h1 class="hero-title">
+                                {{ page.title }}
+                            </h1>
+                            {% if page.subtitle %}
+                                <p class="hero-copy">
+                                    {{ page.subtitle|raw }}
+                                </p>
+                            {% endif %}
+                        </section>
+                    {% endif %}
+
+                    <article class="blogpost">
+                        {{ page.blocks.content|raw }}
+                    </article>
+
+                    <div class="blogpost">
+                        {% if site.disqus.shortname and site.disqus.shortname != '' %}
+                            <div id="disqus_thread"></div>
+                            <script type="text/javascript">
+                                /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                                var disqus_shortname = '{{ site.disqus.shortname }}'; // required: replace example with your forum shortname
+
+
+                                        {% if page.disqus.identifier %}var disqus_identifier = '{{ page.disqus.identifier }}'; {% endif %}
+
+                                        {% if page.disqus.title %}var disqus_title = '{{ page.disqus.title }}';{% endif %}
+
+                                        {% if page.disqus.url %}var disqus_url = '{{ page.disqus.url }}';{% endif %}
+
+                                        {% if page.disqus.category_id %}var disqus_category_id = '{{ page.disqus.category_id }}';{% endif %}
+
+                                /* * * DON'T EDIT BELOW THIS LINE * * */
+                                (function () {
+                                    var dsq = document.createElement('script');
+                                    dsq.type = 'text/javascript';
+                                    dsq.async = true;
+                                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                                })();
+                            </script>
+                            <noscript>Please enable JavaScript to view the
+                                <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by
+                                    Disqus.</a>
+                            </noscript>
+                        {% endif %}
+                    </div>
+
+
                 </div>
-
-            </article>
-
-            <div class="blogpost">
-                {% if site.disqus.shortname and site.disqus.shortname != '' %}
-                    <div id="disqus_thread"></div>
-                    <script type="text/javascript">
-                        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-                        var disqus_shortname = '{{site.disqus.shortname}}'; // required: replace example with your forum shortname
-
-
-                                {% if page.disqus.identifier  %}var disqus_identifier = '{{page.disqus.identifier}}'; {% endif %}
-
-                                {% if page.disqus.title %}var disqus_title = '{{page.disqus.title}}';{% endif %}
-
-                                {% if page.disqus.url %}var disqus_url = '{{page.disqus.url}}';{% endif %}
-
-                                {% if page.disqus.category_id %}var disqus_category_id = '{{page.disqus.category_id}}';{% endif %}
-
-                        /* * * DON'T EDIT BELOW THIS LINE * * */
-                        (function () {
-                            var dsq = document.createElement('script');
-                            dsq.type = 'text/javascript';
-                            dsq.async = true;
-                            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-                        })();
-                    </script>
-                    <noscript>Please enable JavaScript to view the
-                        <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
-                    </noscript>
-                {% endif %}
             </div>
 
 

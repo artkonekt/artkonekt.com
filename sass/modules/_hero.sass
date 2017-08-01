@@ -1,7 +1,7 @@
 @import "../configuration/modules/hero"
 
 .hero
-    padding: 3em
+    padding: 4.5em 0
 
 .hero-dark
     color: $cl-text-ondark
@@ -10,10 +10,13 @@
 
 .hero-title
     margin: 0 0 $siz-general-margin
-    font-family: $hero-title-font-family
     +font-size($hero-title-font-size)
 
 .hero-copy
     margin: 0 0 0.83em
     font-family: $hero-copy-font-family
     +font-size($hero-copy-font-size)
+
+.hero-shade
+    background-color: $cl-elephant
+    background-color: transparentize($cl-elephant, 0.4)
