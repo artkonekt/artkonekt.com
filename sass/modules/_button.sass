@@ -1,8 +1,8 @@
 @import "../configuration/modules/button"
 
 =btn-color($bgcolor, $color)
-    color: $color !important
-    background-color: $bgcolor
+    color: $bgcolor !important
+    background-color: transparent
     border-color: $bgcolor
 
 =btn-size($padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius)
@@ -20,10 +20,11 @@
     touch-action: manipulation
     cursor: pointer
     background-image: none
+    text-transform: uppercase
     // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
-    border: 1px solid transparent
+    border: 2px solid transparent
     white-space: nowrap
-    +btn-size($siz-padding-base-vertical, $siz-padding-base-horizontal, $btn-font-size-base, normal, $siz-border-radius-base)
+    +btn-size($siz-padding-base-vertical, $siz-padding-base-horizontal, $btn-font-size-base, 1, $siz-border-radius-base)
     &[disabled]
         opacity: .65
 
@@ -63,19 +64,19 @@ a
 // --------------------------------------------------
 
 .btn-xl
-    +btn-size($siz-padding-xl-vertical, $siz-padding-xl-horizontal, $btn-font-size-xl, $siz-line-height-small, $siz-border-radius-large)
+    +btn-size($siz-padding-xl-vertical, $siz-padding-xl-horizontal, $btn-font-size-xl, 1, $siz-border-radius-large)
 
 .btn-lg
-    +btn-size($siz-padding-large-vertical, $siz-padding-large-horizontal, $btn-font-size-large, $siz-line-height-small, $siz-border-radius-large)
+    +btn-size($siz-padding-large-vertical, $siz-padding-large-horizontal, $btn-font-size-large, 1, $siz-border-radius-large)
 
 .btn-sm
-    +btn-size($siz-padding-small-vertical, $siz-padding-small-horizontal, $btn-font-size-small, $siz-line-height-small, $siz-border-radius-small)
+    +btn-size($siz-padding-small-vertical, $siz-padding-small-horizontal, $btn-font-size-small, 1, $siz-border-radius-small)
 
 .btn-xs
     font-weight: 300
     text-transform: uppercase
     font-family: $font-small
-    +btn-size($siz-padding-xs-vertical, $siz-padding-xs-horizontal, $btn-font-size-xs, $siz-line-height-small, $siz-border-radius-small)
+    +btn-size($siz-padding-xs-vertical, $siz-padding-xs-horizontal, $btn-font-size-xs, 1, $siz-border-radius-small)
 
 //
 // Block button
