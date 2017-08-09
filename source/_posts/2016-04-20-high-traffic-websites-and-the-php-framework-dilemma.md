@@ -9,8 +9,7 @@ tags:
     - caching
 excerpt: Once someone has come up with the question whether to use an own MVC Framework for high traffic webshops. The framework doesn't matter for that. Here's why.
 image: dodgem_small.jpg
-hero_image: dodgem.jpg
-hero_position: 53%
+hero_image: dodgem2.jpg
 ---
 
 Scalable systems have several factors, and they should be analyzed separately even if they make up a single system at the end of the day.
