@@ -1,21 +1,23 @@
 ---
-use: ["posts"]
+use: ["posts", "sitemap"]
 permalink: sitemap.xml
+sitemap:
+  _exclude: 1
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>{{ site.url }}</loc>
-    <lastmod>{{ site.calculated_date | date('Y-m-d') }}</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
+    <lastmod>{{ site.calculated_date | date('c') }}</lastmod>
+    <changefreq>monthly</changefreq>
   </url>
-  {% for post in data.posts %}
+  {% for url in data.sitemap %}
+
   <url>
-    <loc>{{ site.url }}{{ post.url }}</loc>
-    <lastmod>{{ post.date|date('c') }}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <loc>{{ site.url }}{{ url.loc }}</loc>
+    <lastmod>{{ url.lastmod }}</lastmod>
+    <changefreq>{{ url.changefreq|default('monthly') }}</changefreq>
   </url>
   {% endfor %}
+
 </urlset>

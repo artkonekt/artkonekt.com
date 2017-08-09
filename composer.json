@@ -16,7 +16,8 @@
     "require": {
 	  "sculpin/sculpin": "^2.1@dev",
 	  "dflydev/embedded-composer": "^1.0@dev",
-      "kriswallsmith/assetic": "1.1.2"
+      "kriswallsmith/assetic": "1.1.2",
+        "nickpeirson/sculpin-sitemap-bundle": "^0.1.1"
     },
     "config": {
         "component-dir": "source/components",

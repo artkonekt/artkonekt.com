@@ -31,27 +31,8 @@
 
     {% include '_footer' %}
 
-    <script src="https://use.typekit.net/wch5yzx.js"></script>
-    <script>try{Typekit.load({ async: true });}catch(e){}</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
     {% block scripts %}
     {% endblock %}
-    <script>
-        $(document).on("ready", function() {
-            var $root = $('html, body');
-            $('a[data-behavior="smooth-scrollto"]').click(function(e) {
-                e.preventDefault();
-
-                var href = $.attr(this, 'href');
-                $root.animate({
-                    scrollTop: $(href).offset().top
-                }, 500, function () {
-                    window.location.hash = href;
-                });
-                return false;
-            });
-        });
-    </script>
 
     {% if site.google_analytics_tracking_id %}
         <script type="text/javascript">
