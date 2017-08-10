@@ -11,7 +11,7 @@
 
     <title>{% block title %}{{ page.title }}{% endblock %} &middot; {{ site.title }} &middot; {{ site.subtitle }}</title>
     <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:lel700|Montserrat:300,300i,700" rel="stylesheet">
-    <link rel="stylesheet" href="/css/style.css?v=170809b">
+    <link rel="stylesheet" href="/css/style.css?v=170810">
 
     {% block head_styles %}
     {% endblock %}
@@ -33,6 +33,17 @@
 
     {% include '_footer' %}
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var topmenu = document.getElementById('topmenu');
+
+            document.getElementById('hamburger').addEventListener('click', function(e) {
+                e.preventDefault();
+                topmenu.classList.toggle('is-open');
+            });
+
+        });
+    </script>
     {% block scripts %}
     {% endblock %}
 

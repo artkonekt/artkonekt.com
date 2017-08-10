@@ -11,5 +11,7 @@
         color: $cl-text-onlight
 
 .page-inner-container
-    padding: 0 $siz-general-margin*1.17
     overflow: auto
+    padding: 0 $siz-general-margin/2
+    +bp-md
+        padding: 0 $siz-general-margin*1.17

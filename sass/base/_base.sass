@@ -29,11 +29,14 @@ hr
         margin: $siz-general-margin*1.83 $siz-general-margin*3.33 0
 
 blockquote
+    margin: $siz-general-margin/2 0
     border-left: 3px solid $cl-primary
     background-color: $cl-panel-bg
     color: $cl-text-secondary
     padding: 1em
     font-style: italic
+    +bp-sm
+        margin: $siz-general-margin
     p:first-child
         margin-top: 0
     p:last-child
