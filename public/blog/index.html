@@ -172,6 +172,12 @@
                 topmenu.classList.toggle('is-open');
             });
 
+            if (typeof Vue === "function") {
+                new Vue({
+                    el: '#app'
+                });
+            }
+
         });
     </script>
         

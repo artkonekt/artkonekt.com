@@ -200,6 +200,12 @@ This <em>"agnostic"</em> package has tough bindings to Doctrine and some Symfony
                 topmenu.classList.toggle('is-open');
             });
 
+            if (typeof Vue === "function") {
+                new Vue({
+                    el: '#app'
+                });
+            }
+
         });
     </script>
         

@@ -27,7 +27,7 @@ title: Jobs · PHP Developer · Frontend Developer · Romania
         <div class="content">
             <div class="page-container page-container-light">
 
-                <div class="page-inner-container">
+                <div class="page-inner-container" id="app">
 
                     <h1 class="page-title">open jobs</h1>
 
@@ -38,7 +38,7 @@ title: Jobs · PHP Developer · Frontend Developer · Romania
                                 <h3 class="card-subtitle">laravel | symfony | phalcon</h3>
                                 <h2 class="card-title">PHP Developer</h2>
                                 <p class="card-copy">We're looking forward to hear from you, whether you're<br>
-                                junior/mid-level/senior/yoda 🙇</p>
+                                    junior/mid-level/senior/yoda 🙇</p>
                                 <a href="/jobs/php-developer" class="btn btn-primary">Details...</a>
                             </div>
 
@@ -50,7 +50,7 @@ title: Jobs · PHP Developer · Frontend Developer · Romania
                                 <h3 class="card-subtitle">vuejs | sass | bootstrap</h3>
                                 <h2 class="card-title">Frontend Developer</h2>
                                 <p class="card-copy">We need a workmate who sees that 1px difference<br>
-                                from 3 steps behind 🙋</p>
+                                    from 3 steps behind 🙋</p>
                                 <a href="/jobs/frontend-developer" class="btn btn-primary">Details...</a>
                             </div>
 
@@ -62,10 +62,8 @@ title: Jobs · PHP Developer · Frontend Developer · Romania
 
                     <div class="blogpost">
                         <h2>tl;dr</h2>
-                        <p>JIRA, Freshdesk, Slack, PhpStorm, PHP 7+, Laravel, Symfony, Phalcon, MySQL, Postgres,
-                            git, github, bitbucket, bootstrap, sass, SMACSS, vuejs, jquery,
-                            Digital Ocean, S3, Cloudflare, CDNsun, varnish, nginx, redis, debian, ubuntu,
-                            mailgun, pingdom, opsgenie, algolia, bugsnag, sentry, deploybot, envoyer.</p>
+                        <p><a href="https://stackshare.io/artkonekt/artkonekt" target="_blank">See our tech stack</a>.
+                        </p>
 
                         <h2>hours</h2>
                         <p>
@@ -141,6 +139,9 @@ title: Jobs · PHP Developer · Frontend Developer · Romania
 
                     </div>
 
+                    <rating name="working_at" title="How likely would you work at artkonekt?"
+                            :max="5" _1="Never" _3="Meh" _5="With Pleasure" button-title="Submit your score"></rating>
+
                 </div>
 
             </div>
@@ -148,4 +149,9 @@ title: Jobs · PHP Developer · Frontend Developer · Romania
 
     </div>
 
+{% endblock %}
+
+{% block scripts %}
+    <script src="https://unpkg.com/vue"></script>
+    <script src="/js/rating.vue.js"></script>
 {% endblock %}
