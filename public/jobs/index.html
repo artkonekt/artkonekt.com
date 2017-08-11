@@ -182,9 +182,13 @@
 
                     </div>
 
-                    <rating name="working_at" title="How likely would you work at artkonekt?"
-                            :max="5" _1="Never" _3="Meh" _5="With Pleasure" button-title="Submit your score"></rating>
+                    <div class="panel">
+    <rating name="working_at" title="How likely would you work at artkonekt?"
+            endpoint="/jobs/rating.php"
+            _1="Never" _2="Rather not" _3="Meh" _4="Could be" _5="With pleasure"></rating>
+</div>
 
+<div class="vspace"></div>
                 </div>
 
             </div>
@@ -232,7 +236,8 @@
 
         });
     </script>
-        <script src="https://unpkg.com/vue"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.3.4/vue-resource.min.js"></script>
     <script src="/js/rating.vue.js"></script>
 
             <script type="text/javascript">

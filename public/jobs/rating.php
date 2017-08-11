@@ -1,16 +1,15 @@
 <?php
 /**
- * Contains apply.php.
+ * Contains rating.php.
  *
  * @copyright   Copyright (c) 2017 Attila Fulop
  * @author      Attila Fulop
  * @license     MIT
- * @since       2017-08-01
+ * @since       2017-08-11
  *
  */
 
 include __DIR__ . '/.env.php';
-
 
 if ('POST' !== $_SERVER['REQUEST_METHOD']) {
     http_response_code(400);
@@ -61,6 +60,7 @@ function mg_send($to, $subject, $message)
 
 @mg_send(
     JOB_SEND_EMAIL_TO,
-    'Job Application :: ' . date('Y-m-d H:i:s'),
-    'Application from: ' . $_POST['contact']
+    'Job rating :: ' . date('Y-m-d H:i:s'),
+    'Rating from: ' . $_SERVER['REMOTE_ADDR'] . "\n\n" .
+    print_r($_POST, true)
 );
