@@ -14,7 +14,7 @@ hero_image: flirt2.jpg
 
 When I started coding in '99, I wanted my first application to be the very best, so I spent a lot of time polishing it. I've created dozens of applications since then. Some patterns in my code were repeating and have settled with time. I had a lot of referential point in prior projects and often copypasted code.
 
-I don't prefer copypaste, but it's better then investing efforts in YAGNI features, that only create noise.
+I don't prefer copypaste, but today I say it is better then investing efforts in YAGNI features, that only create noise.
 
 After growing from solo to a team, and being specialized to E-commerce,
 one day I realized that it's approximately the 15th time in my life I'm
@@ -26,6 +26,8 @@ It felt painful, so I decided to act.
 I've heard [Pain Driven Development](http://deviq.com/pain-driven-development/) from Jeffrey Way for the first time.
 
 **Clients want all the same thing, but differently**; and we must ship the way they want. So we need the basics settled, reusable but modifiable.
+
+There's a clear distinction between applications and libraries. Applications are for single use, libraries are for reusing in multiple applications.
 
 When you're developing an application don't think about code re-use.
 I attended Chad Fowler's presentation this year where he said:
@@ -52,7 +54,7 @@ Concord was a markdown file first, a collection of guidelines that modules and h
 
 My primary friction working with Sylius/Symfony was that I'm not an XML/YAML/annotation programmer. I prefer coding with PHP. The service locator pattern combined with their XML configs spread across dozens of files is definitely flexible, but makes the code very obscure. How do you know which classes are intended to implement the `xyz.blabla.foo` service? How do you know what methods/properties do the consumers of that service expect? Not to mention the practice of 'gluing' service name strings so you can't just search your codebase for `xyz.blabla.foo`.
 
-I was very enlightened to learn Laravel's DI can resolve services based from interfaces as well. It means your service name is the interface's FQCN, which is PHP, instead of being buried in XML and/or YML files. That way any class that's a candidate to represent that service is easy to locate as they need to implement that interface. For me it's a lot more clean.
+I was very enlightened to learn Laravel's DI can resolve services based on interfaces as well. It means your service name is the interface's FQCN, which is PHP, instead of being buried in XML and/or YML files. That way any class that's a candidate to represent that service is easy to locate as they need to implement that interface. For me it's a lot more clean.
 
 ### Friction #2: Needless Complexity
 
@@ -65,9 +67,44 @@ When I met situations like:
 - Creating a twig extension for a specific currency formatting;
 - Writing a service and hook it to events via XML in order to add someone to the bcc of an E-mail;
 
-all made me feel that the extra mile I'm walking is a complete waste of time. And that time often was paid by me and not the client.
+all made me feel that the extras mile I'm walking are a complete waste of time. And that time often was paid by me and not the client.
 
 So I decided not to abstract/interface/inject everything as long as it doesn't hurt.
+
+### Installation
+
+Concord is a regular Laravel service provider, installing it is trivial:
+
+Add the dependency to composer: `composer require konekt/concord`.
+
+Register the provider in `config/app.php`:
+
+```php
+'providers' => [
+    // Other Service Providers
+
+    Konekt\Concord\ConcordServiceProvider::class,
+];
+```
+
+And publish the config file:
+
+```bash
+php artisan vendor:publish --provider="Konekt\Concord\ConcordServiceProvider" --tag=config
+```
+
+### Concord 101
+
+Concord's primary feature is to enable Modules for Laravel Applications on top of Laravel's built in Service Providers.
+
+**Modules**
+Modules are the de-coupled implementations of the business logic built around a single purpose, like 'Client', 'Cart', 'Billing'.
+
+**Boxes**
+Boxes are optional. Basically they're modules too. You may think of them as "boilerplate" applications. They wrap and connect several modules, and are subject to customization by the final Application.
+
+**Application**
+Any Laravel 5.3+ application that incorporates modules.
 
 ## Post Structure:
 
@@ -79,6 +116,11 @@ Problem - Agitation - Solution
 2. Organize
 3. Write/finish
 
+#### First Time With Laravel
+
+When I saw Laravel for the first time, it was about version 4 or 3 I guess. My impression was it has a very funky looking site, easy to read documentation. I left off in about 2 minutes when I saw they're using 'statics' everywhere. Not me - said, and went back to my abstracts (which I'm pretty good at btw 😎).
+
+#### The Sylius Story
 
 In my case I started evaluating E-commerce libraries, platforms and frameworks. We ended up using [Sylius](http://sylius.org). It's targeted to developers (which I am), built on top of Symfony which is one of my favorite 3 PHP frameworks. Pawel (the creator of Sylius) usually highlights the fact that Sylius is TDD/BDD in the first place. I do TDD myself, but if I'm honest I don't care at all if the platform is TDD. We've implemented 5 shops with Sylius and neither ran their tests once. Sylius is still a very good choice, but I found myself drifting away from some programming principles they're sticking to.
 
