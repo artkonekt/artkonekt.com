@@ -16,9 +16,8 @@ When I started coding in '99, I wanted my first application to be the very best,
 
 I don't prefer copypaste, but today I say it is better then investing efforts in YAGNI features, that only create noise.
 
-After growing from solo to a team, and being specialized to E-commerce,
-one day I realized that it's approximately the 15th time in my life I'm
-implementing the "Add To Cart" functionality.
+But after growing from solo to a team, and being specialized to E-commerce, one day I realized that it's approximately the 15th time in my life I'm implementing the "Add To Cart" functionality.
+
 I became angry. And bitter. And annoyed. Is that my professional career?
 Implementing basic things for all my life? To start from `CREATE TABLE products` all the time?
 
@@ -46,7 +45,129 @@ I've learned a lot from Sylius, both practices to follow and practices to avoid.
 
 ## Concord: Laravel Extension For Building Modular Applications
 
+> **Documentation**: https://artkonekt.github.io/concord
+
+### Concord 101
+
+Concord's primary feature is to enable Modules for Laravel Applications on top of Laravel's built in Service Providers.
+
+**Modules**
+Modules are the de-coupled implementations of the business logic built around a single purpose, like 'Client', 'Cart', 'Billing'.
+
+**Boxes**
+Boxes are optional and basically they're modules too. They wrap and connect several modules, and are intended to be customized by the final Application.
+
+**Application**
+Any Laravel 5.3+ application that incorporates modules.
+
+
+### Modules
+
+Modules are decoupled components. Technically they're a bunch of classes and files wired into the Laravel Application with their own dedicated Service Provider.
+
+Modules can be situated in two ways:
+
+- external modules (separate composer packages)
+- in-app modules (usually under app/Modules/<ModuleName>)
+
+The only difference between the two is how you consider them. External modules are to be used by several applications while in-app modules are unlikely be used elsewhere. In case of external/reusable modules Concord offers some nice facilities for altering the module's behavior which have not much sense in case of in-app modules.
+
+### Directory Structure
+
+Concord has a [default directory structure](https://artkonekt.github.io/concord/#/directory-structure) for various classes/files. This structure is called [Convention](https://artkonekt.github.io/concord/#/conventions) which you can freely customize.
+
 Concord was a markdown file first, a collection of guidelines that modules and host applications should comply with. I've also listed my frictions I've faced working with some systems.
+
+### Module Parts
+
+Modules were designed so that they can encapsulate most common Laravel _parts_ like:
+
+- Eloquent Models
+- Migrations, seeds
+- Events, listeners and their bindings
+- Views, blade components
+- Routes
+- Controllers, Middlewares
+- Request types (for validation)
+- Commands
+
+Concord registers them in Laravel when necessary, but it's possible to omit parts via configuration.
+
+## Notable Features
+
+### Altering Models
+
+As an example there is the `Product` model defined in the product **module**. Your final **application** may want to alter/extend it so that it doesn't break the basic functionality of the module.
+
+Possible modifications:
+
+- Adding fields,
+- Removing fields,
+- Altering fields (via accessors and mutators),
+- Adding scopes,
+- Adding relationships.
+
+Most of these can be done by adding migrations and extending the original Model class using simple OOP inheritance. The essence of the problem is **how will your lower level modules know that the system is using an extended class** for that entity?
+
+**The answer is to tell concord to use your model instead:**
+
+```php
+    // Within AppServiceProvider's boot method:
+    $this->app->concord->registerModel(
+        \Vendor\ProductModule\Contracts\Product::class,
+        \App\Product::class
+    );
+```
+
+Concord's concept requires that modules define an interface for every Eloquent Model (`\Vendor\ProductModule\Contracts\Product` in this case).
+
+`Models\Product` class gets bound to the `Contracts\Product` interface within the module (consider it as a default). If the application wants to extend that class, it invokes Concord's `registerModel()` again, and that's all.
+
+The `registerModel()` method also silently [binds the interface to the implementation with Laravel's service container](https://laravel.com/docs/5.4/container#binding-interfaces-to-implementations) so you can simply type hint the interface at any point where [automatic injection](https://laravel.com/docs/5.4/container#automatic-injection) happens.
+
+### Migrations
+
+The migrations within Concord are just plain Laravel migrations. Starting with v5.3, Laravel supports migrations distributed in various folders, Concord is utilizing this facility.
+
+It is possible to disable publishing of migrations in the module configuration:
+
+`config/concord.php`:
+
+```php
+<?php
+return [
+    'modules' => [
+        Konekt\Address\Providers\ModuleServiceProvider::class => [
+            'migrations' => false
+        ]
+    ]
+];
+```
+By default, migrations are published.
+
+### Installation
+
+Concord is a regular Laravel service provider.
+
+Add the dependency to composer: `composer require konekt/concord`.
+
+Register the provider in `config/app.php`:
+
+```php
+'providers' => [
+    // Other Service Providers
+
+    Konekt\Concord\ConcordServiceProvider::class,
+];
+```
+
+Publish the config file:
+
+```bash
+php artisan vendor:publish --provider="Konekt\Concord\ConcordServiceProvider" --tag=config
+```
+
+
 
 ### Friction #1: Lack Of Clarity
 
@@ -71,40 +192,9 @@ all made me feel that the extras mile I'm walking are a complete waste of time. 
 
 So I decided not to abstract/interface/inject everything as long as it doesn't hurt.
 
-### Installation
 
-Concord is a regular Laravel service provider, installing it is trivial:
 
-Add the dependency to composer: `composer require konekt/concord`.
 
-Register the provider in `config/app.php`:
-
-```php
-'providers' => [
-    // Other Service Providers
-
-    Konekt\Concord\ConcordServiceProvider::class,
-];
-```
-
-And publish the config file:
-
-```bash
-php artisan vendor:publish --provider="Konekt\Concord\ConcordServiceProvider" --tag=config
-```
-
-### Concord 101
-
-Concord's primary feature is to enable Modules for Laravel Applications on top of Laravel's built in Service Providers.
-
-**Modules**
-Modules are the de-coupled implementations of the business logic built around a single purpose, like 'Client', 'Cart', 'Billing'.
-
-**Boxes**
-Boxes are optional. Basically they're modules too. You may think of them as "boilerplate" applications. They wrap and connect several modules, and are subject to customization by the final Application.
-
-**Application**
-Any Laravel 5.3+ application that incorporates modules.
 
 ## Post Structure:
 
@@ -179,6 +269,8 @@ Refer To Strong Typing vs. Loose Typing (refer to Jeff Way)
 
 Mention vanilo as the bigger scope for this.
 Mention Sylius and how we sucked learning (maybe it's too much for first post?)
+
+http://blog.cognitect.com/blog/2016/6/16/the-new-normal-team-scale-autonomy
 
 In-app modules versus separate modules
 
