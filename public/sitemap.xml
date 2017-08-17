@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://artkonekt.com</loc>
-    <lastmod>2017-08-11T12:27:11+03:00</lastmod>
+    <lastmod>2017-08-17T20:52:09+03:00</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   
@@ -39,6 +39,12 @@
   <url>
     <loc>https://artkonekt.com/blog</loc>
     <lastmod>2017-08-09T18:02:39+03:00</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://artkonekt.com/blog/e-commerce-platform-for-laravel</loc>
+    <lastmod>2017-08-17T20:52:05+03:00</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   

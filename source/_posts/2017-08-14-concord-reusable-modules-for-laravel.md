@@ -1,5 +1,5 @@
 ---
-title: How To Build Reusable And Extensible Modules For Laravel
+title: How To Build Reusable Modules For Laravel
 subtitle: Is it feasable<br>to develop for multiple<br>PHP frameworks at once?
 tags:
     - php
