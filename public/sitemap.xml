@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://artkonekt.com</loc>
-    <lastmod>2017-11-10T11:14:18+02:00</lastmod>
+    <lastmod>2017-11-22T10:36:37+02:00</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   
@@ -19,26 +19,14 @@
   </url>
   
   <url>
-    <loc>https://artkonekt.com/contact</loc>
-    <lastmod>2017-08-09T17:36:21+03:00</lastmod>
-    <changefreq>yearly</changefreq>
+    <loc>https://artkonekt.com/jobs</loc>
+    <lastmod>2017-11-10T12:14:14+02:00</lastmod>
+    <changefreq>monthly</changefreq>
   </url>
   
   <url>
     <loc>https://artkonekt.com/now</loc>
-    <lastmod>2017-10-05T12:43:39+03:00</lastmod>
-    <changefreq>monthly</changefreq>
-  </url>
-  
-  <url>
-    <loc>https://artkonekt.com/blog</loc>
-    <lastmod>2017-08-09T18:02:39+03:00</lastmod>
-    <changefreq>monthly</changefreq>
-  </url>
-  
-  <url>
-    <loc>https://artkonekt.com/blog/e-commerce-platform-for-laravel</loc>
-    <lastmod>2017-08-17T20:52:05+03:00</lastmod>
+    <lastmod>2017-11-22T10:35:04+02:00</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   
@@ -49,9 +37,27 @@
   </url>
   
   <url>
+    <loc>https://artkonekt.com/blog/e-commerce-platform-for-laravel</loc>
+    <lastmod>2017-08-17T20:52:05+03:00</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+  
+  <url>
     <loc>https://artkonekt.com/blog/high-traffic-sites-and-the-php-framework-dilemma</loc>
     <lastmod>2017-08-09T18:09:19+03:00</lastmod>
     <changefreq>monthly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://artkonekt.com/blog</loc>
+    <lastmod>2017-11-10T12:14:14+02:00</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://artkonekt.com/contact</loc>
+    <lastmod>2017-08-09T17:36:21+03:00</lastmod>
+    <changefreq>yearly</changefreq>
   </url>
   
 </urlset>

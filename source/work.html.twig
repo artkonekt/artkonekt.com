@@ -1,0 +1,290 @@
+---
+layout: page
+title: How We Work, What We Can Do
+sitemap:
+changefreq: monthly
+---
+
+{% block hero %}
+    <style>
+        .header {
+            background-image: url(/images/grinding.jpg);
+        }
+    </style>
+    <div class="wrapper">
+        <section class="hero hero-dark">
+            <h1 class="hero-title"><span class="hero-shade">How<br>
+                we work</span></h1>
+            <p class="hero-copy">
+                <span class="hero-shade">tech stack, methodology, processes</span>
+            </p>
+        </section>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="wrapper">
+
+        <div class="content">
+            <div class="page-container page-container-light">
+
+                <div class="page-inner-container">
+
+                    <h1 class="page-title">e-commerce</h1>
+
+                    <div class="blogpost">
+
+                        <blockquote>
+                            <strong>DISCLAIMER</strong>: We don't take MAGENTO projects!
+                        </blockquote>
+
+                        <p>
+                            Our primary business domain is E-commerce.<br>
+                            That means any site that directly sells either physical or digital goods.
+                        </p>
+                        <p>
+                            We have experience with building and maintaining:
+                        </p>
+                        <ul>
+                            <li>Single sales pages,</li>
+                            <li>Classic, cart-based webshops,</li>
+                            <li>Subscription based solutions,</li>
+                            <li>Custom search and filtering,</li>
+                            <li>Online payments (Braintree, Stripe, Paypal, PayU, OTP (hu), Mobilpay (ro), Euplatesc
+                                (ro)),
+                            </li>
+                            <li>Order processing,</li>
+                            <li>Courier integration (DPD, Fancurier (ro), Sprinter (hu)),</li>
+                            <li>Automated billing,</li>
+                            <li>Multiple currencies and languages,</li>
+                            <li>EU VAT calculation,</li>
+                            <li>Data interchange with ERP and accounting systems,</li>
+                            <li>CRM,</li>
+                            <li>High-traffic websites.</li>
+                        </ul>
+
+                        <p>
+
+                        </p>
+
+                    </div>
+
+                    <h1 class="page-title" id="tech-stack">tech stack</h1>
+
+                    <div class="blogpost">
+
+                        <p><strong>tl;dr</strong>: <a href="https://stackshare.io/artkonekt/artkonekt" target="_blank">See
+                                on stackshare</a>.
+
+                        <p>
+                            We pretty much cover the <a href="https://codeup.com/what-is-a-full-stack-developer/"
+                                                        target="_blank">full stack web developer definition</a>.
+                            However if we must highlight our most powerful areas, they're <em>PHP Backend
+                                development</em>
+                            and simple but scalable <em>Cloud Infrastructure</em>.
+                        </p>
+
+                        <h2 id="web-applications">Web Applications</h2>
+
+                        <p>Currently we have active projects with:</p>
+
+                        <ul>
+                            <li>PHP 7.0, 7.1, 7.2 🐘</li>
+                            <li>Symfony 2/3/4</li>
+                            <li>Laravel 5.3 - 5.5</li>
+                            <li>Sylius 0.14, 0.17</li>
+                            <li>Phalcon 2, 3</li>
+                            <li>Wordpress</li>
+                        </ul>
+
+                        <p>We use these technologies to create websites/applications, REST APIs, CLI apps, background
+                            jobs. <br><br>
+                            Formerly we also used to work with:
+                        </p>
+
+                        <ul>
+                            <li>Yii 1,2</li>
+                            <li>Magento 1 🙊</li>
+                            <li>Zend Framework 2</li>
+                            <li>Konekt Framework 1, 2 (our own MVC 🤦)</li>
+                        </ul>
+
+                        <h4>Architechture</h4>
+
+                        <p>
+                            Our typical solution can be probably the best described as <a
+                                    href="http://fideloper.com/hexagonal-architecture" target="_blank">Hexagonal
+                                Architecture</a> + Domain Events.<br><br>
+                            So you won't see fat controllers or god objects. Fat services, yes that could happen.
+                            Neither have we stepped to CQRS yet, nor to Event Sourcing, but we're already having flirts.
+                        </p>
+
+                        <h2 id="frontend">Frontend</h2>
+
+                        <ul>
+                            <li>vuejs</li>
+                            <li>sass</li>
+                            <li>webpack</li>
+                            <li>grunt, gulp (I know they're not hipster any more)</li>
+                            <li>Bootstrap 2/3/4</li>
+                            <li>Foundation</li>
+                            <li>SMACSS (big fan)</li>
+                            <li>react (little experience)</li>
+                        </ul>
+
+                        <h2 id="cloud">Cloud</h2>
+
+                        <ul>
+                            <li>Digital Ocean (droplets, storage, load balancers)</li>
+                            <li>AWS: EC2, S3, SQS, SES, CloudFront</li>
+                            <li>Nginx, php-fpm, Varnish</li>
+                            <li>MySQL, MariaDB, Postgres, redis</li>
+                            <li>Mailgun, Sendgrid</li>
+                            <li>CDNs</li>
+                        </ul>
+
+                        <h2 id="qa">Quality Assurance</h2>
+
+                        <ul>
+                            <li>Pingdom</li>
+                            <li>OpsGenie</li>
+                            <li>Travis, StyleCI</li>
+                            <li>Bugsnag, Sentry</li>
+                            <li>Blackfire</li>
+                        </ul>
+
+                        We deploy with DeployBot and Envoyer. Anytime.
+
+                        <h2 id="security">Security</h2>
+
+                        Yes, we've been hacked already. And had to write a post-mortem report to a Police
+                        Investigator once.
+
+                        That's why we use:
+
+                        <ul>
+                            <li>Cloudflare</li>
+                            <li>Nexpose</li>
+                            <li>Rigid non-access policy on servers</li>
+                            <li>Key based authentication if possible</li>
+                            <li>Double encrypted password store</li>
+                        </ul>
+
+                        It's worth to mention that <strong>we're not security experts</strong>. We've found that's a
+                        separate profession.
+
+                    </div>
+
+                    <h1 class="page-title" id="processes">processes</h1>
+
+                    <div class="blogpost">
+
+                        <h2 id="projects">Projects</h2>
+                        <p>
+                            We <strong>do not take projects</strong> on a
+                        </p>
+
+                        <blockquote>Hey, I need a website that does this and that, what does that cost? Gimme a quote!
+                        </blockquote>
+
+                        <p>
+                            basis.<br><br>
+
+                            That might sound odd, but here are the reasons why:
+                        </p>
+
+                        <ol>
+                            <li>At the beginning of the project none of the parties exactly know what they're about to
+                                build.
+                            </li>
+                            <li>Clients often think they do know, but they actually don't.</li>
+                            <li>Repeat: at the beginning there are many factors unknown for either of the parties.</li>
+                            <li>If we jump on the train of <em>very-very detailed specs</em>, the client usually gets
+                                pissed off.
+                            </li>
+                            <li>If we overestimate, the client pays more than it costs.</li>
+                            <li>If we underestimate, we loose money.</li>
+                            <li>If the client pays more, they try to squeeze out more than that was in the agreement.
+                            </li>
+                            <li>If we loose money, we'll try to minimize further loss by chopping off
+                                features/quality.
+                            </li>
+                            <li>Any of these scenarios results either a win-loose or a loose-loose situation.</li>
+                            <li>This also leads to shameful negotiations.</li>
+                        </ol>
+
+                        <p>Related read: <a href="https://en.wikipedia.org/wiki/Scope_creep" target="_blank">scope
+                                creep</a>.
+                        </p>
+
+                        <p>We are, however more than open to discuss your next project idea, and provide with an
+                            insight of what to expect, an estimated timeline, possible obstacles.</p>
+
+                        <h2 id="pricing">Pricing</h2>
+                        <p>
+                            Our preferred way to work with clients is <strong>billing per hour</strong>.<br><br>
+                            It means we log all our activities in JIRA. Logging only happens when we're actually
+                            working with something, so it's expected to have ~6 hours/person/day (with a full time
+                            contract).
+                        </p>
+
+                        <p>At the end of the month you'll receive a detailed Time Report that contains all the work done
+                            and the number of hours spent with them. We don't do rounding, so 30 minutes of work is
+                            always 0.5 hours</p>
+
+                        <h4>Fees</h4>
+                        <p>
+                            Our fee is <strong>35€/hour</strong> for Software Development, Design &amp; Consulting.
+                        </p>
+
+                        <h2>Team</h2>
+                        <p>
+                            Our team currently consists of 4 people.
+                        </p>
+
+                        <h2 id="availability">Availability</h2>
+                        <p>
+                            Normal business hours are 9:00 - 17:00 EET.<br>
+                            Live systems are being monitored and recovered on failure <strong>24/7/365</strong>.<br>
+                            We operate a <strong>helpdesk</strong> for projects in the operation/maintenance phase.<br><br>
+                            We can provide with services beyond business hours/days on demand.<br>
+                        </p>
+
+                        <h2 id="agile">Agile?</h2>
+                        <p>
+                            Apart from being a buzzword, Scrum can work pretty well in some scenarios.<br>
+                            We can do <strong>Scrum</strong> if necessary, but we don't stick to it.<br><br>
+                            If the decision is up to us, we choose a workflow that's near to <strong>Kanban</strong>,
+                            with rapid 1-2 weeks of planning and continuous delivery.
+                        </p>
+                        <p>
+                            There's one thing we encourage as much as possible, and that's a clean agreement on:<br>
+                            - who can submit requests,<br>
+                            - what are the expected results,<br>
+                            - who/when approves completed work,<br>
+                            - complaint resolution paths.
+                        </p>
+
+                        <h2 id="languages">Languages</h2>
+                        <p>
+                            <strong>Our default work language is English</strong>.<br>
+                            We also speak: Hungarian, Romanian, German (and one of us can read Dutch 😉).<br>
+                            Worklogs, code commenting and documentation we create are in English.
+                        </p>
+
+                        <h1 class="page-title">Feels like we could work together?</h1>
+
+                        <p class="text-center">
+                            <a href="/contact/" class="btn btn-primary btn-lg">Contact us!</a>
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

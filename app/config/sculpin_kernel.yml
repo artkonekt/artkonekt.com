@@ -3,3 +3,5 @@ sculpin_content_types:
         permalink: blog/:slug_title/index.html
         taxonomies:
             - tags
+sculpin:
+  output_dir: public
