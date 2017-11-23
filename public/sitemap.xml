@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://artkonekt.com</loc>
-    <lastmod>2017-11-22T10:36:37+02:00</lastmod>
+    <lastmod>2017-11-23T09:19:56+02:00</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   
@@ -19,6 +19,12 @@
   </url>
   
   <url>
+    <loc>https://artkonekt.com</loc>
+    <lastmod></lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+  
+  <url>
     <loc>https://artkonekt.com/jobs</loc>
     <lastmod>2017-11-10T12:14:14+02:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -26,7 +32,7 @@
   
   <url>
     <loc>https://artkonekt.com/now</loc>
-    <lastmod>2017-11-22T10:35:04+02:00</lastmod>
+    <lastmod>2017-11-22T10:50:10+02:00</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   
