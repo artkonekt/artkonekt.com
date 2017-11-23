@@ -14,7 +14,7 @@ module.exports = function(grunt) {
         },
 
         clean: {
-            build: ['public/css/*.css']
+            build: ['public/css/style.css']
         },
 
         watch: {
