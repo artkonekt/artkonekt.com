@@ -87,8 +87,8 @@ changefreq: monthly
                         <ul>
                             <li>PHP 7.0, 7.1, 7.2 🐘</li>
                             <li>Symfony 2/3/4</li>
-                            <li>Laravel 5.3 - 5.5</li>
-                            <li>Sylius 0.14, 0.17</li>
+                            <li>Laravel 5.3 - 5.7</li>
+                            <li>Sylius 0.14 - 0.17, 1.0</li>
                             <li>Phalcon 2, 3</li>
                             <li>Wordpress</li>
                         </ul>
@@ -100,7 +100,7 @@ changefreq: monthly
 
                         <ul>
                             <li>Yii 1,2</li>
-                            <li>Magento 1 🙊</li>
+                            <li>Magento 1 </li>
                             <li>Zend Framework 2</li>
                             <li>Konekt Framework 1, 2 (our own MVC 🤦)</li>
                         </ul>
@@ -111,8 +111,9 @@ changefreq: monthly
                             Our typical solution can probably be best described as <a
                                     href="http://fideloper.com/hexagonal-architecture" target="_blank">Hexagonal
                                 Architecture</a> + Domain Events.<br><br>
-                            So you won't see fat controllers or god objects. Fat services, yes that could happen.
-                            Neither have we stepped to CQRS yet, nor to Event Sourcing, but we're already having flirts.
+                            So you won't see fat controllers or god objects. We have to admit fat
+                            services are still alive in some of our older codebases. We're having
+                            flirts with CQRS for a while and lately also with Event Sourcing.
                         </p>
 
                         <h2 id="frontend">Frontend</h2>
@@ -131,12 +132,12 @@ changefreq: monthly
                         <h2 id="cloud">Cloud</h2>
 
                         <ul>
-                            <li>Digital Ocean (droplets, storage, load balancers)</li>
-                            <li>AWS: EC2, S3, SQS, SES, CloudFront</li>
+                            <li>Digital Ocean (droplets, storage, spaces, load balancers)</li>
+                            <li>AWS: EC2, S3, SQS, SNS, SES, CloudFront, ELB</li>
                             <li>Nginx, php-fpm, Varnish</li>
                             <li>MySQL, MariaDB, Postgres, redis</li>
                             <li>Mailgun, Sendgrid</li>
-                            <li>CDNs</li>
+                            <li>Other CDNs</li>
                         </ul>
 
                         <h2 id="qa">Quality Assurance</h2>
@@ -144,7 +145,7 @@ changefreq: monthly
                         <ul>
                             <li>Pingdom</li>
                             <li>OpsGenie</li>
-                            <li>Travis, StyleCI</li>
+                            <li>Travis, StyleCI, Bitbucket Pipelines</li>
                             <li>Bugsnag, Sentry</li>
                             <li>Blackfire</li>
                         </ul>

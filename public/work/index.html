@@ -9,7 +9,7 @@
 
     <title>How We Work, What We Can Do &middot; artkonekt.com &middot; Ecommerce Development, Maintenance &amp; Operations</title>
     <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:600,700|Montserrat:300,300i,700" rel="stylesheet">
-    <link rel="stylesheet" href="/css/clean180125.css">
+        <link rel="stylesheet" href="/css/style.css">
 
                 
 </head>
@@ -130,8 +130,8 @@
                         <ul>
                             <li>PHP 7.0, 7.1, 7.2 🐘</li>
                             <li>Symfony 2/3/4</li>
-                            <li>Laravel 5.3 - 5.5</li>
-                            <li>Sylius 0.14, 0.17</li>
+                            <li>Laravel 5.3 - 5.7</li>
+                            <li>Sylius 0.14 - 0.17, 1.0</li>
                             <li>Phalcon 2, 3</li>
                             <li>Wordpress</li>
                         </ul>
@@ -143,7 +143,7 @@
 
                         <ul>
                             <li>Yii 1,2</li>
-                            <li>Magento 1 🙊</li>
+                            <li>Magento 1 </li>
                             <li>Zend Framework 2</li>
                             <li>Konekt Framework 1, 2 (our own MVC 🤦)</li>
                         </ul>
@@ -154,8 +154,9 @@
                             Our typical solution can probably be best described as <a
                                     href="http://fideloper.com/hexagonal-architecture" target="_blank">Hexagonal
                                 Architecture</a> + Domain Events.<br><br>
-                            So you won't see fat controllers or god objects. Fat services, yes that could happen.
-                            Neither have we stepped to CQRS yet, nor to Event Sourcing, but we're already having flirts.
+                            So you won't see fat controllers or god objects. We have to admit fat
+                            services are still alive in some of our older codebases. We're having
+                            flirts with CQRS for a while and lately also with Event Sourcing.
                         </p>
 
                         <h2 id="frontend">Frontend</h2>
@@ -174,12 +175,12 @@
                         <h2 id="cloud">Cloud</h2>
 
                         <ul>
-                            <li>Digital Ocean (droplets, storage, load balancers)</li>
-                            <li>AWS: EC2, S3, SQS, SES, CloudFront</li>
+                            <li>Digital Ocean (droplets, storage, spaces, load balancers)</li>
+                            <li>AWS: EC2, S3, SQS, SNS, SES, CloudFront, ELB</li>
                             <li>Nginx, php-fpm, Varnish</li>
                             <li>MySQL, MariaDB, Postgres, redis</li>
                             <li>Mailgun, Sendgrid</li>
-                            <li>CDNs</li>
+                            <li>Other CDNs</li>
                         </ul>
 
                         <h2 id="qa">Quality Assurance</h2>
@@ -187,7 +188,7 @@
                         <ul>
                             <li>Pingdom</li>
                             <li>OpsGenie</li>
-                            <li>Travis, StyleCI</li>
+                            <li>Travis, StyleCI, Bitbucket Pipelines</li>
                             <li>Bugsnag, Sentry</li>
                             <li>Blackfire</li>
                         </ul>
@@ -333,13 +334,24 @@
             <div class="pure-g">
 
                 <div class="pure-u-1 pure-u-sm-1-2">
-                    &copy; artkonekt 2011 - 2018
+                    <a href="/now">news</a><br>
+                        <a href="/contact">contact us</a><br>
+                        <a href="/work">how we work</a><br><br>
+
+                    <span style="font-size: small">&copy; artkonekt 2011 - 2018</span>
                 </div>
 
                 <div class="pure-u-1 pure-u-sm-1-2">
 
                     <div class="footer-social">
-                        <a href="https://github.com/artkonekt"><img src="/images/githubw.svg" alt="github" title="github"></a>
+                        <a href="https://www.linkedin.com/company/artkonekt/"><img src="/images/linkedinw.svg"
+                                                                    alt="stackshare" title="stackshare"></a>
+                        &nbsp;
+                        <a href="https://stackshare.io/artkonekt/artkonekt"><img src="/images/stackshare.png"
+                                                                                 alt="stackshare" title="stackshare"></a>
+                        &nbsp;
+                        <a href="https://github.com/artkonekt"><img src="/images/githubw.svg"
+                                                                    alt="github" title="github"></a>
                     </div>
 
                 </div>
@@ -349,6 +361,7 @@
         </div>
     </div>
 </footer>
+
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             var topmenu = document.getElementById('topmenu');
