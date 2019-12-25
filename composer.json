@@ -14,10 +14,10 @@
         }
     ],
     "require": {
-	  "sculpin/sculpin": "^2.1@dev",
-	  "dflydev/embedded-composer": "^1.0@dev",
-      "kriswallsmith/assetic": "1.1.2",
-        "nickpeirson/sculpin-sitemap-bundle": "^0.1.1"
+        "php": "^7.2",
+        "sculpin/sculpin": "^3.0",
+        "kriswallsmith/assetic": "^1.1.2",
+        "nickpeirson/sculpin-sitemap-bundle": "dev-master"
     },
     "config": {
         "component-dir": "source/components",
@@ -29,6 +29,8 @@
         ]
     },
     "autoload": {
-        "classmap": ["component-manager.php"]
+        "classmap": [
+            "component-manager.php"
+        ]
     }
 }
