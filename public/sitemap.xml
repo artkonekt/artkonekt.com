@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://artkonekt.com</loc>
-    <lastmod>2019-12-25T22:16:23+01:00</lastmod>
+    <lastmod>2020-05-08T15:08:47+02:00</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   
@@ -13,13 +13,19 @@
   </url>
   
   <url>
-    <loc>https://artkonekt.com/blog/e-commerce-platform-for-laravel</loc>
-    <lastmod>2019-09-18T21:27:35+02:00</lastmod>
+    <loc>https://artkonekt.com/now</loc>
+    <lastmod>2019-12-25T22:01:58+01:00</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   
   <url>
     <loc>https://artkonekt.com/blog/framework-agnostic-php-applications</loc>
+    <lastmod>2019-09-18T21:27:35+02:00</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://artkonekt.com/blog/e-commerce-platform-for-laravel</loc>
     <lastmod>2019-09-18T21:27:35+02:00</lastmod>
     <changefreq>monthly</changefreq>
   </url>
@@ -43,26 +49,20 @@
   </url>
   
   <url>
+    <loc>https://artkonekt.com/jobs</loc>
+    <lastmod>2019-09-18T21:27:35+02:00</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+  
+  <url>
     <loc>https://artkonekt.com/contact</loc>
     <lastmod>2019-09-18T21:27:35+02:00</lastmod>
     <changefreq>yearly</changefreq>
   </url>
   
   <url>
-    <loc>https://artkonekt.com/now</loc>
-    <lastmod>2019-12-25T22:01:58+01:00</lastmod>
-    <changefreq>monthly</changefreq>
-  </url>
-  
-  <url>
     <loc>https://artkonekt.com/work</loc>
     <lastmod>2019-12-25T22:03:09+01:00</lastmod>
-    <changefreq>monthly</changefreq>
-  </url>
-  
-  <url>
-    <loc>https://artkonekt.com/jobs</loc>
-    <lastmod>2019-09-18T21:27:35+02:00</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   
