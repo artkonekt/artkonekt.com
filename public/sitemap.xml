@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://artkonekt.com</loc>
-    <lastmod>2020-06-07T15:03:16+02:00</lastmod>
+    <lastmod>2020-09-22T11:47:16+02:00</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   
@@ -14,13 +14,13 @@
   
   <url>
     <loc>https://artkonekt.com/now</loc>
-    <lastmod>2020-05-08T14:59:43+02:00</lastmod>
+    <lastmod>2020-09-22T11:42:07+02:00</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   
   <url>
-    <loc>https://artkonekt.com/blog/introducing-or-fixing-agile-5-tips-to-succeed</loc>
-    <lastmod>2020-06-07T11:32:10+02:00</lastmod>
+    <loc>https://artkonekt.com/blog/introducing-agile-5-tips-to-succeed</loc>
+    <lastmod>2020-06-07T15:03:15+02:00</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   
@@ -55,6 +55,18 @@
   </url>
   
   <url>
+    <loc>https://artkonekt.com/work</loc>
+    <lastmod>2020-09-22T11:46:10+02:00</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://artkonekt.com/work/development</loc>
+    <lastmod>2019-12-25T22:03:09+01:00</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+  
+  <url>
     <loc>https://artkonekt.com/jobs</loc>
     <lastmod>2020-05-08T15:07:49+02:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -64,12 +76,6 @@
     <loc>https://artkonekt.com/contact</loc>
     <lastmod>2020-05-08T15:18:16+02:00</lastmod>
     <changefreq>yearly</changefreq>
-  </url>
-  
-  <url>
-    <loc>https://artkonekt.com/work</loc>
-    <lastmod>2019-12-25T22:03:09+01:00</lastmod>
-    <changefreq>monthly</changefreq>
   </url>
   
 </urlset>
