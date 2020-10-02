@@ -76,7 +76,7 @@
 
                 <div data-paperform-id="ky2qwyo2" data-takeover="1">
 
-                    <h1 class="page-title" id="remove-me">Loading Form...</h1>
+                    <h1 class="page-title vspace" id="remove-me">Loading Form...</h1>
 
                 </div>
             </div>
@@ -84,14 +84,16 @@
     </div>
 </div>
     <script>
-        (function () {
-            var script = document.createElement('script');
-            script.src = "https://paperform.co/__embed";
-            document.body.appendChild(script);
-            setTimeout(function () {
-                document.getElementById('remove-me').remove();
-            }, 3500);
-        })()
+        setTimeout(function () {
+            (function () {
+                var script = document.createElement('script');
+                script.src = "https://paperform.co/__embed";
+                document.body.appendChild(script);
+                setTimeout(function () {
+                    document.getElementById('remove-me').remove();
+                }, 3500);
+            })()
+        }, 2500);
     </script>
 
     <footer>
