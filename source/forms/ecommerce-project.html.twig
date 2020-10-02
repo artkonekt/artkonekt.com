@@ -1,0 +1,53 @@
+---
+layout: page
+title: New E-commerce Project
+sitemap:
+  _exclude: 1
+---
+
+{% block hero %}
+    <style>
+        .header {
+            background-image: url(/images/trip_start.jpg);
+        }
+    </style>
+    <div class="wrapper">
+        <section class="hero hero-dark">
+            <h1 class="hero-title"><span class="hero-shade">Your E-commerce<br>
+                Project</span></h1>
+            <p class="hero-copy">
+			<span class="hero-shade">tell us <strong>what you need</strong>,
+                and <strong>what you don't</strong></span>
+            </p>
+        </section>
+    </div>
+{% endblock %}
+
+{% block content %}
+<div class="wrapper">
+
+    <div class="content">
+        <div class="page-container page-container-light">
+
+            <div class="page-inner-container">
+
+                <div data-paperform-id="ky2qwyo2" data-takeover="1">
+
+                    <h1 class="page-title" id="remove-me">Loading Form...</h1>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <script>
+        (function () {
+            var script = document.createElement('script');
+            script.src = "https://paperform.co/__embed";
+            document.body.appendChild(script);
+            setTimeout(function () {
+                document.getElementById('remove-me').remove();
+            }, 3500);
+        })()
+    </script>
+{% endblock %}
