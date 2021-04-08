@@ -8,6 +8,11 @@
         <meta name="robots" content="noindex, follow">
     {% endblock %}
 
+    <meta property="og:url"           content="{{ site.url }}{{ page.url }}" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="{{ page.title }}" />
+    <meta property="og:description"   content="{{ page.excerpt|default(site.subtitle) }}" />
+    <meta property="og:image"         content="{{ site.url }}/images/logox6.png" />
 
     <title>{% block title %}{{ page.title }}{% endblock %} &middot; {{ site.title }} &middot; {{ site.subtitle }}</title>
     <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:600,700|Montserrat:300,300i,700" rel="stylesheet">
