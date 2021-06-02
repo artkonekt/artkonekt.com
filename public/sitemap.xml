@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://artkonekt.com</loc>
-    <lastmod>2021-06-02T15:14:47+02:00</lastmod>
+    <lastmod>2021-06-02T15:22:46+02:00</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   
@@ -14,7 +14,7 @@
   
   <url>
     <loc>https://artkonekt.com/blog/rest-apis-vs-backend-for-frontend</loc>
-    <lastmod>2021-06-02T14:11:52+02:00</lastmod>
+    <lastmod>2021-06-02T15:14:45+02:00</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   
@@ -80,7 +80,7 @@
   
   <url>
     <loc>https://artkonekt.com/now</loc>
-    <lastmod>2020-10-02T09:30:35+02:00</lastmod>
+    <lastmod>2021-06-02T15:22:37+02:00</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   
