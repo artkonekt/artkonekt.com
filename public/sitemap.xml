@@ -2,85 +2,91 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://artkonekt.com</loc>
-    <lastmod>2021-04-08T07:03:22+00:00</lastmod>
+    <lastmod>2021-06-02T15:14:47+02:00</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   
   <url>
     <loc>https://artkonekt.com/blog</loc>
-    <lastmod>2021-04-07T13:32:12+00:00</lastmod>
+    <lastmod>2021-01-22T21:52:49+01:00</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   
   <url>
-    <loc>https://artkonekt.com/blog/introducing-agile-5-tips-to-succeed</loc>
-    <lastmod>2021-04-07T13:32:12+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-  </url>
-  
-  <url>
-    <loc>https://artkonekt.com/blog/e-commerce-platform-for-laravel</loc>
-    <lastmod>2021-04-07T13:32:12+00:00</lastmod>
+    <loc>https://artkonekt.com/blog/rest-apis-vs-backend-for-frontend</loc>
+    <lastmod>2021-06-02T14:11:52+02:00</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   
   <url>
     <loc>https://artkonekt.com/blog/high-traffic-sites-and-the-php-framework-dilemma</loc>
-    <lastmod>2021-04-07T13:32:12+00:00</lastmod>
+    <lastmod>2019-09-18T21:27:35+02:00</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   
   <url>
     <loc>https://artkonekt.com/blog/framework-agnostic-php-applications</loc>
-    <lastmod>2021-04-07T13:32:12+00:00</lastmod>
+    <lastmod>2019-09-18T21:27:35+02:00</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   
   <url>
-    <loc>https://artkonekt.com/now</loc>
-    <lastmod>2021-04-07T13:32:12+00:00</lastmod>
+    <loc>https://artkonekt.com/blog/e-commerce-platform-for-laravel</loc>
+    <lastmod>2019-09-18T21:27:35+02:00</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://artkonekt.com/blog/introducing-agile-5-tips-to-succeed</loc>
+    <lastmod>2020-06-07T15:03:15+02:00</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   
   <url>
     <loc>https://artkonekt.com/contact</loc>
-    <lastmod>2021-04-07T13:32:12+00:00</lastmod>
+    <lastmod>2020-05-08T15:18:16+02:00</lastmod>
     <changefreq>yearly</changefreq>
   </url>
   
   <url>
-    <loc>https://artkonekt.com/work/development</loc>
-    <lastmod>2021-04-07T13:32:12+00:00</lastmod>
+    <loc>https://artkonekt.com/work/cloud</loc>
+    <lastmod>2020-09-23T12:26:20+02:00</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   
   <url>
     <loc>https://artkonekt.com/work</loc>
-    <lastmod>2021-04-07T13:32:12+00:00</lastmod>
+    <lastmod>2020-09-22T11:55:51+02:00</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   
   <url>
-    <loc>https://artkonekt.com/work/cloud</loc>
-    <lastmod>2021-04-07T13:32:12+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-  </url>
-  
-  <url>
-    <loc>https://artkonekt.com/jobs/frontend-developer</loc>
-    <lastmod>2021-04-07T13:32:12+00:00</lastmod>
+    <loc>https://artkonekt.com/work/development</loc>
+    <lastmod>2020-09-23T08:54:23+02:00</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   
   <url>
     <loc>https://artkonekt.com/jobs/php-developer</loc>
-    <lastmod>2021-04-07T13:32:12+00:00</lastmod>
+    <lastmod>2020-05-08T15:09:14+02:00</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://artkonekt.com/jobs/frontend-developer</loc>
+    <lastmod>2020-05-08T15:09:07+02:00</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://artkonekt.com/now</loc>
+    <lastmod>2020-10-02T09:30:35+02:00</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   
   <url>
     <loc>https://artkonekt.com/jobs</loc>
-    <lastmod>2021-04-07T13:32:12+00:00</lastmod>
+    <lastmod>2020-05-08T15:07:49+02:00</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   
